@@ -1,0 +1,19 @@
+{
+  "name": "e-library",
+  "version": "1.0.0",
+  "description": "ecommerce for books and full controll dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run init && cd public && php -S localhost:80" ,
+    "build:tailwind": "npx tailwindcss -i ./public/css/tailwind.css -o ./dist/css/tailwind.css --watch",
+    "init": "cd _install && php setup.php"
+  },
+  "keywords": [
+    "php"
+  ],
+  "author": "FatimaAlmashhor",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
