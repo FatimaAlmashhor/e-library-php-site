@@ -2,21 +2,19 @@
 
 namespace App\Controllers;
 
-require_once __DIR__ . "/../../vendor/autoload.php";
-
 
 use App\Router;
-use App\Models\Users;
+// use App\Models\Users as UserModel;
 
 use PDO;
 
-class User
+class Users
 {
     /*
     @param Router to reach the database and view ;
     */
-    function index(Router $route)
+    public static function index(Router $router)
     {
-        $route->renderView('users_view');
+        $router->renderView('users/index');
     }
 }

@@ -2,9 +2,7 @@
 
 namespace App;
 
-require_once __DIR__ . "/../vendor/autoload.php";
 
-use App\Database;
 
 class Router
 {
@@ -50,9 +48,6 @@ class Router
         foreach ($params as $key => $value) {
             $$key = $value;
         }
-        ob_start();
         include __DIR__ . "/views/$view.php";
-        $content = ob_get_clean();
-        include __DIR__ . "/views/_layout.php";
     }
 }
