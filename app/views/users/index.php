@@ -10,25 +10,9 @@
 </head>
 
 <body>
-    <button class="" id='login_btn' onclick="show_model('show_register_model')">
-        Register
-    </button>
-    <?php require __DIR__  . "/../register.php" ?>
+
     <h1>Here all the users</h1>
     <script>
-    function show_model(id) {
-        const model = document.getElementById(
-            id);
-        model.style.display = 'flex';
-    }
-
-    function hide_model(id) {
-        const model = document.getElementById(
-            id);
-        model.style.display = 'none';
-    }
-
-
     // function showHint(str) {
     //     console.log('test')
     //     if (str.length == 0) {

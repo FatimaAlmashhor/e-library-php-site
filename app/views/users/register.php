@@ -18,16 +18,19 @@
             </div>
             <button class="btn w-full form-btn bg-gray rounded-5 color-gray"> أرسال رمز التحقق</button>
             <label class="input rounded-5">
-                <input type="text" placeholder=" اسم الاول">
+                <input type="text" name='fname' placeholder=" اسم الاول" required>
             </label>
             <label class="input rounded-5">
-                <input type="text" placeholder=" اسم العائله">
+                <input type="text" name='lname' placeholder=" اسم العائله">
             </label>
             <label class="input rounded-5">
-                <input type="email" placeholder="  البريد الاكتروني">
+                <input type="email" name='email' placeholder="  البريد الاكتروني" required>
             </label>
             <label class="input rounded-5">
-                <input type="password" placeholder=" كلمه المرور ">
+                <input type="password" name='password' placeholder=" كلمه المرور " required>
+            </label>
+            <label class="input rounded-5">
+                <input type="password" name='cpassword' placeholder=" تأكيد المرور" required>
             </label>
             <label class="checkbox rounded-5 ">
                 <input type="checkbox">
