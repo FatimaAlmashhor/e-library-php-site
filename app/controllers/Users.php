@@ -17,8 +17,8 @@ class Users
     {
         $router->renderView('index');
     }
-    public  function register(Router $router)
+    public static function register(Router $router)
     {
-        echo "We are here in register ";
+        $router->renderView('users/index');
     }
 }

@@ -29,8 +29,12 @@ class Router
     public function resolve()
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
-        $url = $_SERVER['PATH_INFO'] ?? '/';
-
+        $url = $_SERVER['REDIRECT_QUERY_STRING'] ?? '/';
+        if ($url !== '/') {
+            $url = explode('=', $_SERVER['REDIRECT_QUERY_STRING']);
+            $url = "/" . $url[1];
+        }
+        print_r($_SERVER['REDIRECT_QUERY_STRING'] ?? '/');
         if ($method === 'get') {
             $fn = $this->getRoutes[$url] ?? null;
         } else {

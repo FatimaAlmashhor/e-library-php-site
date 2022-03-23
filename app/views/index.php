@@ -1770,8 +1770,7 @@
                             <button class="btn w-full form-btn bg-gray color-gray rounded-5">انشاء حساب </button>
                         </form>
                         <div class="regiter_links flex-col">
-                            <p class="color-gray"> ليس لديك حساب ؟ <a id='login_in_existing_account' class="color-blue"
-                                    href="#">تسجيل الدخول</a></p>
+                            <p class="color-gray"> ليس لديك حساب ؟ <a id='login_in_existing_account' class="color-blue" href="#">تسجيل الدخول</a></p>
                         </div>
                     </div>
                 </div>
@@ -1793,11 +1792,11 @@
     <script src="./app/dist/js/nav.js"></script>
     <script src="./app/dist/js/countdown.js"></script>
     <script>
-    const header = document.querySelector('.header-warrper');
-    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header-warrper');
+        window.addEventListener('scroll', () => {
 
-        window.scrollY === 0 ? header.classList.add('header_top') : header.classList.remove('header_top')
-    })
+            window.scrollY === 0 ? header.classList.add('header_top') : header.classList.remove('header_top')
+        })
     </script>
 </body>
 
