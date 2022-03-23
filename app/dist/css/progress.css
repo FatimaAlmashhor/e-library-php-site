@@ -1,0 +1,141 @@
+.progress_section{
+    min-width: 100%;
+    min-height: 100vh;
+    margin: 2.2rem auto;
+}
+.progress_warpper{
+    width: 100%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.progress_steps{
+    height: 100px;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    direction: ltr;
+    margin-top: 1.2%;
+    margin-left: 18%;
+}
+
+.step{
+    position: relative;
+    width: 100%;
+    direction: ltr;
+    font-weight: bold;
+}
+.step.active::before{
+    
+    background-color: rgb(81, 201, 165);
+    
+}
+.step.active .step-content{
+    --active-color : rgb(14, 168, 155); 
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--active-color);  
+    background-color: var( --active-color);
+    color: white;
+    animation-name: spreed;
+    animation-duration: .8s;
+    animation-iteration-count: 3;
+}
+@keyframes spreed{
+    to{
+        box-shadow: 0 0 0 7px #fff, 0 0 0 6px var(--active-color); 
+    }
+}
+.step::before{
+    content: '';
+    position: absolute;
+    left:50px;
+    top: 50%;
+    width: calc(100% - 50px);
+    height: 5px;
+    background-color: rgb(235, 234, 233);
+    transition: 0.3s ;
+}
+.step:last-child::before{
+    width: 0%;
+}
+
+.step-content{
+    
+    position: relative;
+    width: 50px;
+    height: 50px;
+    /* box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--active-color); */
+    background-color: rgb(204, 204, 204);
+    /* border:2px solid rgb(230, 230, 233); */
+    color: rgb(82, 82, 83);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+.step_info{
+    position: absolute;
+    font-size: 12px;
+    /* width: 100%; */
+    left:6px;
+    margin:0px auto;
+    /* background-color: khaki; */
+}
+
+.progress_content{
+    width: 50%;
+    min-height: 350px;
+}
+.animation-circule{
+    position: relative;
+    width: inherit;
+    background-color: rgb(243, 243, 243);
+    padding: 10px;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+.confirm_info{
+    min-width: 50%;
+}
+/* .animation-circule::after{
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top:20px;
+    left: -20px;
+    z-index: -1;
+    border-radius: inherit;
+    background-color: rgba(255, 134, 134 ,0.7);
+    animation-name: circule;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+} */
+@keyframes circule {
+    /* 10% {
+        top:-40%;
+        left: 40%;
+    }
+    30% {
+        top:-40%;
+        left: -40%;
+    }
+    60% {
+        top:40%;
+        left: -60%;
+    } */
+}
+@media screen and (max-width : 650px) {
+    .progress_steps{
+        width: 100%;
+    }
+    .progress_content{
+        width: 100%;
+    }
+    .confirm_info{
+        min-width: 50%;
+    }
+}

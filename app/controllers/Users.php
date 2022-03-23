@@ -15,7 +15,7 @@ class Users
     */
     public static function index(Router $router)
     {
-        $router->renderView('users/index');
+        $router->renderView('index');
     }
     public  function register(Router $router)
     {

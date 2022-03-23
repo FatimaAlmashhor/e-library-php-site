@@ -1,0 +1,27 @@
+.cart_section{
+    margin : 4rem auto ;
+    width: 100%;
+}
+.qty_increase{
+    border:1px solid rgb(194, 194, 194) ;
+}
+.qty-btn{
+    text-align: center;
+    border:1px solid rgb(194, 194, 194) ;
+    background-color: rgb(231, 231, 231);
+    border-radius: 1px;
+    /* padding : 3px; */
+}
+#cart-counter{
+    position: absolute;
+    background-color: red;
+    right: -10px;
+    top:0px;
+    width: 24px;
+    height: 24px;
+    padding : 3px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}

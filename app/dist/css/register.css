@@ -1,0 +1,45 @@
+.form_header{
+    font-family: inherit;
+    /* color: var(--gray-text); */
+    border-bottom: 1px solid var(--dark-gray);
+    text-align: center;
+    padding-bottom: 4px;
+}
+.forgot{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.form-btn{
+    padding : 0.5rem ; 
+    width: 100%;
+    box-shadow: var(--flat-shadow);
+}
+.regiter_links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 1.9rem auto 10px;
+    justify-content: center;
+    align-items: center;
+}
+.checkbox{
+    display: flex;
+    padding: 0.3rem;
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+}
+.checkbox input[type='checkbox']{
+    width: fit-content;
+    height: 100%;
+    background-color: indianred;
+    margin-left:  10px;
+    padding: 10px;
+}
+.checkbox span{
+    flex: 2;
+}
+#create_account{
+    cursor: pointer;
+}

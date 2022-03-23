@@ -1,0 +1,43 @@
+.collap{
+    --padding : 0.3rem;
+    width: 100%;
+    border : 1px solid rgb(189, 189, 189);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
+}
+.collaps_header{
+    background-color: rgb(194, 212, 194);
+    padding: var( --padding);
+}
+.collaps_header.green{
+    background-color: green;
+}
+.collaps_item{
+    /* border-bottom: 1px solid rgb(252, 247, 247); */
+}
+.collaps_item_header{
+    border-bottom: 1px solid rgb(211, 209, 209);
+    padding: var( --padding);
+    background-color: rgb(226, 242, 250);
+    cursor: pointer;
+    
+}
+.collaps_item_header:hover{
+    background-color: rgb(204, 231, 245);
+}
+.collaps_item_body{
+    display: none;
+    height: 0px;
+}
+.collaps_item_body.active{
+    transition: 0.4s;
+    display: inline-block;
+    height: fit-content;
+}
+
+.collaps_icon{
+    font-size: 20px;
+    font-weight: bold;
+    height: fit-content;
+}

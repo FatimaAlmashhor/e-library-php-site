@@ -1,0 +1,15 @@
+
+.animation{
+    
+}
+.cat_section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+@media screen and (min-width : 680px) {
+    .cat_section{
+        grid-template-columns: 3fr 9fr;
+    }
+}

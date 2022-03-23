@@ -1,0 +1,76 @@
+
+.book_image{
+    margin: 10px;
+}
+
+.book_warpper{
+    width : 250px;
+    height: fit-content;
+    background-color: var(--white);
+    box-shadow: var(--flat-shadow);
+    border-radius: 4px;
+    padding: 1rem 0px;
+}
+.book_big_image{
+    margin:10px;
+    flex:1 ;
+}
+.books_details_list{
+    display: flex;
+    margin:5px auto;
+
+}
+.book_gallary{
+    width: 40px;
+    /* height: 50px; */
+    cursor: pointer;
+    border-radius: 5px;
+    margin: auto 5px;
+    overflow: hidden;
+}
+.book_gallary:hover{
+    box-shadow: var(--flat-shadow);
+}
+.book_gallary.active{
+    border: 1px solid blue;
+
+}
+
+/* here the the book information */
+.book_info{
+    min-width: 320px;
+    margin: 0px;
+    padding: 0px 1rem;
+}
+.book_view{
+    text-align: end;
+}
+.starts , .option_price , .rate{
+    justify-content: flex-end;
+    text-align: end;
+
+}
+.option_price{
+    flex:1; 
+}
+.rate li{
+    width: 15px;
+    height: 15px;
+}
+.rate li img{
+    /* filter: hue-rotate(); */
+}
+.optiona_list{
+    width: 100%;
+}
+/* here the last saction of the additial information */
+
+
+.dropdown{
+    box-shadow: var(--flat-shadow);
+    margin: 0px 8px;
+    padding: 4px;
+}
+.row{
+    margin:1.1rem auto;
+}
