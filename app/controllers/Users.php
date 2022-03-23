@@ -4,7 +4,8 @@ namespace App\Controllers;
 
 
 use App\Router;
-// use App\Models\Users as UserModel;
+use App\Utiles;
+use App\Models\Users as UserModel;
 
 use PDO;
 
@@ -19,6 +20,19 @@ class Users
     }
     public static function register(Router $router)
     {
+        // Pass info
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        $cpass = $_POST['cpassword'];
+
+        // check password and email was valid before get into the model
+        if (
+            Utiles::validPassword($pass, $cpass) &&
+            Utiles::validEmail($email)
+        ) {
+            // TODO: User model create
+        }
         $router->renderView('books/index');
     }
 }

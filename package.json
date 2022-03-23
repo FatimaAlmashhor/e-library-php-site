@@ -4,7 +4,7 @@
   "description": "ecommerce for books and full controll dashboard",
   "main": "index.js",
   "scripts": {
-    "start": "npm run init && cd public && php -S localhost:80" ,
+    "start": " cd public && php -S http://localhost:80/e-library" ,
     "build:tailwind": "npx tailwindcss -i ./public/css/tailwind.css -o ./app/dist/css/tailwind.css --watch",
     "init": "cd _install && php setup.php"
   },
