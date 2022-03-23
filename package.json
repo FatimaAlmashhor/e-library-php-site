@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run init && cd public && php -S localhost:80" ,
-    "build:tailwind": "npx tailwindcss -i ./public/css/tailwind.css -o ./dist/css/tailwind.css --watch",
+    "build:tailwind": "npx tailwindcss -i ./public/css/tailwind.css -o ./app/dist/css/tailwind.css --watch",
     "init": "cd _install && php setup.php"
   },
   "keywords": [

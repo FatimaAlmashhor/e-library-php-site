@@ -40,6 +40,7 @@ class Router
             echo 'Page not found';
             exit;
         }
+
         echo call_user_func($fn, $this);
     }
 

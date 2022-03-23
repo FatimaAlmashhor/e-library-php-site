@@ -17,4 +17,8 @@ class Users
     {
         $router->renderView('users/index');
     }
+    public  function register(Router $router)
+    {
+        echo "We are here in register ";
+    }
 }

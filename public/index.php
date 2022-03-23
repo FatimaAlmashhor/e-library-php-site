@@ -9,6 +9,7 @@ $database = new \App\Database();
 $router = new Router($database);
 
 $router->get('/', [UsersController::class, 'index']);
+$router->get('/register', [UsersController::class, 'register']);
 
 
 $router->resolve();
