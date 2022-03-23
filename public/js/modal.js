@@ -32,12 +32,12 @@ get_one('#create_account')
 
 
 // for show the login 
-get_one('#login_in_existing_account')
-    .addEventListener('click', () => {
-        login.classList.remove('hidden');
-        register.classList.add('hidden');
-        arraws.classList.add('hidden');
-    })
+// get_one('#login_in_existing_account')
+//     .addEventListener('click', () => {
+//         login.classList.remove('hidden');
+//         register.classList.add('hidden');
+//         arraws.classList.add('hidden');
+//     })
 
 // for all the btn that need to one the login modal 
 get_one('.login-btn').addEventListener('click', (e) => {

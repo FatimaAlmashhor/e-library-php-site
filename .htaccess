@@ -1,4 +1,7 @@
 RewriteEngine On
+RewriteBase /e-library/
+
+RewriteCond %{REQUEST_FILENAME} !/(css|fonts|icon|include|js|assets)/
 
 RewriteCond %{REQUEST_FILE_NAME} !-d
 RewriteCond %{REQUEST_FILE_NAME} !-f

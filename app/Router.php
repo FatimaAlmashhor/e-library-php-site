@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * TODO: 
+ * 
+ */
+
 namespace App;
 
 
 
 class Router
 {
+
     public array $getRoutes = [];
     public array $postRoutes = [];
 
@@ -34,7 +40,6 @@ class Router
             $url = explode('=', $_SERVER['REDIRECT_QUERY_STRING']);
             $url = "/" . $url[1];
         }
-        print_r($_SERVER['REDIRECT_QUERY_STRING'] ?? '/');
         if ($method === 'get') {
             $fn = $this->getRoutes[$url] ?? null;
         } else {
@@ -44,7 +49,6 @@ class Router
             echo 'Page not found';
             exit;
         }
-
         echo call_user_func($fn, $this);
     }
 
@@ -53,6 +57,9 @@ class Router
         foreach ($params as $key => $value) {
             $$key = $value;
         }
+        ob_start();
         include __DIR__ . "/views/$view.php";
+        $content = ob_get_clean();
+        include __DIR__ . "/views/_layout.php";
     }
 }

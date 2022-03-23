@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./app/dist/css/main.css">
-    <title>E-book</title>
-    <!-- <base href="http://localhost/">  -->
-
-</head>
-
 <body class="">
     <nav class="">
         <ul class="nav-list  container">
@@ -1727,53 +1715,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="register" class="login_section flex-col hidden">
-                    <div class="login_warpper">
-                        <div class="form_header">
-                            <h3> أنشاء حساب</h3>
-                        </div>
-                        <form class="form_content form">
-                            <div class="flex-row justify_content_between">
-                                <div class="w-full  ml-1 flex-1">
-                                    <label class="input rounded-5 inline">
-                                        <input type="phone" placeholder="  رقم الجوال">
-                                    </label>
-                                </div>
-                                <div class="">
-                                    <label class="input rounded-5">
-                                        <input type="number" placeholder="  رمز البلد ">
-                                    </label>
-                                </div>
-                            </div>
-                            <button class="btn w-full form-btn bg-gray rounded-5 color-gray"> أرسال رمز التحقق</button>
-                            <label class="input rounded-5">
-                                <input type="text" placeholder=" اسم الاول">
-                            </label>
-                            <label class="input rounded-5">
-                                <input type="text" placeholder=" اسم العائله">
-                            </label>
-                            <label class="input rounded-5">
-                                <input type="email" placeholder="  البريد الاكتروني">
-                            </label>
-                            <label class="input rounded-5">
-                                <input type="password" placeholder=" كلمه المرور ">
-                            </label>
-                            <label class="checkbox rounded-5 ">
-                                <input type="checkbox">
-                                <span class="color-gray">أوافق على <a href="#" class="color-blue">الشروط والاوحكام</a>
-                                </span>
-                            </label>
-                            <label class="checkbox rounded-5 ">
-                                <input type="checkbox">
-                                <span class="color-gray"> لانضمام للنشره البريديه</span>
-                            </label>
-                            <button class="btn w-full form-btn bg-gray color-gray rounded-5">انشاء حساب </button>
-                        </form>
-                        <div class="regiter_links flex-col">
-                            <p class="color-gray"> ليس لديك حساب ؟ <a id='login_in_existing_account' class="color-blue" href="#">تسجيل الدخول</a></p>
-                        </div>
-                    </div>
-                </div>
+                <?php include_once __DIR__ . "/../users/register.php" ?>
                 <div id='image-gallery' class='hidden'>
                     <div class="arraws hidden">
                         <img id='left' src="../assets/svgs/left-arrow.svg" alt="">
@@ -1783,21 +1725,3 @@
             </div>
         </div>
     </div>
-    <script src="./app/dist/js/modal.js"></script>
-    <!-- <script  src="./src/js/search.js"></script> -->
-    <script src="./app/dist/js/cart.js"></script>
-    <script src="./app/dist/js/mainSlider.js"></script>
-    <script src="./app/dist/js/carousel.js"></script>
-    <script src="./app/dist/js/toggleLangs.js"></script>
-    <script src="./app/dist/js/nav.js"></script>
-    <script src="./app/dist/js/countdown.js"></script>
-    <script>
-        const header = document.querySelector('.header-warrper');
-        window.addEventListener('scroll', () => {
-
-            window.scrollY === 0 ? header.classList.add('header_top') : header.classList.remove('header_top')
-        })
-    </script>
-</body>
-
-</html>

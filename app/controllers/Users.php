@@ -15,10 +15,10 @@ class Users
     */
     public static function index(Router $router)
     {
-        $router->renderView('index');
+        $router->renderView('books/index');
     }
     public static function register(Router $router)
     {
-        $router->renderView('users/index');
+        $router->renderView('books/index');
     }
 }
