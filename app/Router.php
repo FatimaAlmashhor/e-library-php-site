@@ -46,8 +46,6 @@ class Router
         } else {
             $fn = $this->postRoutes[$url] ?? null;
         }
-        print_r($_SERVER['REQUEST_URI']);
-        print_r($fn);
         if (!$fn) {
             echo 'Page not found';
             exit;

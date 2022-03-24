@@ -32,7 +32,7 @@ class Users
             $cpass = $_POST['cpassword'];
             // check password and email was valid before get into the model
             $checkVaildOf = new Validation();
-            print_r($checkVaildOf->password($pass, $cpass));
+            print_r($checkVaildOf->name('password')->value($pass)->require()->check());
             // if (
             //     $checkVaildOf->password($pass, $cpass)->email($email)->check()
             // ) {
