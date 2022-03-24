@@ -27,6 +27,15 @@ get_one('#create_account')
     .addEventListener('click', () => {
         login.classList.add('hidden');
         register.classList.remove('hidden');
+        var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         v.innerHTML = this.responseText;
+        //     }
+        // };
+        // console.log(xmlhttp);
+        // xmlhttp.open("GET", "./register", true);
+        // xmlhttp.send();
     });
 
 

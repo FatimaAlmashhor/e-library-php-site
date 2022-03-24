@@ -10,7 +10,8 @@ $database = new \App\Database();
 $router = new Router($database);
 
 $router->get('/', [UsersController::class, 'index']);
+$router->get('/register', [UsersController::class, 'index']);
 $router->post('/register', [UsersController::class, 'register']);
-$router->get('/login', [UsersController::class, 'login']);
+$router->post('/login', [UsersController::class, 'login']);
 
 $router->resolve();

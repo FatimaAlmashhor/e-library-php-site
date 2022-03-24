@@ -7,14 +7,14 @@ class Validation
 {
     private $checkEmail = false;
     private $checkPassword = false;
-    function  password(string $pass, string $cpass): Validation
+    function  password(string $pass, string $cpass)
     {
         if (!empty($pass) && !empty($cpss)) {
             if ($cpass === $pass) {
                 $this->checkPassword = true;
             }
         }
-        return $this;
+        return  $this->checkPassword;
     }
 
     function email(string $email): Validation
@@ -26,6 +26,6 @@ class Validation
     }
     public function check()
     {
-        return ($this->checkEmail && $this->checkPassword);
+        return $this->checkPassword;
     }
 }

@@ -1,59 +1,5 @@
 <body class="">
-    <nav class="">
-        <ul class="nav-list  container">
-            <li class=" flex-row flex-center login-btn">
-                <i class="nav_icon"><img src="./assets/svgs/svgexport-5.svg" /></i>
-                <span>أدخل لحسابك اوسجل الان </span>
-            </li>
-            <li>
-                <a href='./index.html'>
-                    <i class="nav_icon"><img src="./assets/svgs/star.svg" /></i>
-                    <span> الرئسية </span>
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    <i class="nav_icon"><img src="./assets/svgs/delivery.svg" /></i>
-                    <span>من نحن </span>
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    <i class="nav_icon"><img src="./assets/svgs/security.svg" /></i>
-                    <span>اتصل بنا </span>
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    <i class="nav_icon"><img src="./assets/svgs/help.svg" /></i>
-                    <span> المساعدة </span>
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    <i class="nav_icon"><img src="./assets/svgs/location.svg" /></i>
-                    <span> سيايسه الخصوصيه </span>
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    <i class=""></i>
-                    <span> اليمن </span>
-                </a>
-            </li>
 
-            <li id='switch_lang' class="flex-row flex-center">
-                <i class="nav_icon"><img src="./assets/svgs/langs.svg" /></i>
-                <span> English </span>
-            </li>
-
-        </ul>
-        <div id='humburger' class="  humbrger">
-            <div class="w-20 ">
-                <img src="./assets/svgs/humbarger.svg" alt="">
-            </div>
-        </div>
-    </nav>
 
     <header>
         <div class="header-warrper container header_top ">
@@ -1569,121 +1515,7 @@
             </section>
         </main>
     </header>
-    <footer>
-        <div class="footer-warpper ">
-            <!-- dark footer -->
-            <div class="footer_top container ">
-                <div class="footer_top_content flex-row justify_content_between">
-                    <div class="footer_col">
-                        <div class="footer_col_title">
-                            انضم الى نشرتنا البريديه
-                        </div>
-                        <div class="footer_col_content">
-                            <form action="" class="join-us-from">
-                                <input type="text" name="" id="" placeholder="ادخل بريدك الاكتروني " />
-                                <button>اشتراك</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="footer_col">
-                        <div class="footer_col_title">
-                            انضم الى نشرتنا البريديه
-                        </div>
-                        <div class="footer_col_content">
-                            <ul>
-                                <li> مبيعات الشركات</li>
-                                <li> الاسأله المتكرره</li>
-                                <li> دليل التسويق والمطبوعات</li>
-                                <li>موقع المعارض</li>
-                                <li>سيايسة الصمان </li>
-                                <li>سياسيه الاستبدال</li>
-                                <li>اتصل بنا </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer_col">
-                        <div class="footer_col_title">
-                            انضم الى نشرتنا البريديه
-                        </div>
-                        <div class="footer_col_content">
-                            <ul>
-                                <li> مبيعات الشركات</li>
-                                <li> الاسأله المتكرره</li>
-                                <li> دليل التسويق والمطبوعات</li>
-                                <li>موقع المعارض</li>
-                                <li>سيايسة الصمان </li>
-                                <li>سياسيه الاستبدال</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer_col">
-                        <div class="footer_col_title">
-                            انضم الى نشرتنا البريديه
-                        </div>
-                        <div class="footer_col_content">
-                            <ul>
-                                <li> مبيعات الشركات</li>
-                                <li> الاسأله المتكرره</li>
-                                <li> دليل التسويق والمطبوعات</li>
-                                <li>موقع المعارض</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer_col">
-                        <div class="footer_col_title">
-                            انضم الى نشرتنا البريديه
-                        </div>
-                        <div class="footer_col_content">
-                            <ul>
-                                <li> مبيعات الشركات</li>
-                                <li> الاسأله المتكرره</li>
-                                <li> دليل التسويق والمطبوعات</li>
-                                <li>موقع المعارض</li>
-                                <li>موقع المعارض</li>
-                                <li>موقع المعارض</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer_top_social">
-                    <div class="footer_col">
-                        <div class="footer_col_title">
-                            تواصل معنا
-                        </div>
-                        <div class=" socail_items">
-                            <ul class="flex-row">
-                                <li class="socail_item"><img src="./assets/svgs/facebook.svg" /></li>
-                                <li class="socail_item"><img src="./assets/svgs/twitter.svg" /></li>
-                                <li class="socail_item"><img src="./assets/svgs/tiktok.svg" /></li>
-                                <li class="socail_item"><img src="./assets/svgs/linkedin.svg" /></li>
-                                <li class="socail_item"><img src="./assets/svgs/insta.svg" /></li>
-                                <li class="socail_item"><img src="./assets/svgs/snap.svg" /></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- lighter footer -->
-            <div class="footer_bottom ">
-                <div class="footer_bottom_container container  flex-row justify_content_between">
-                    <div class="bottom_footer_left ">
-                        <ul class="payment_carts flex-row justify_content_between">
-                            <li class=""><img src="./assets/svgs/master can.svg" /></li>
-                            <li class=""><img src="./assets/svgs/mastercard.svg" /></li>
-                            <li class=""><img src="./assets/svgs/ktaf.svg" /></li>
-                            <li class=""><img src="./assets/svgs/pay.svg" /></li>
-                            <li class=""><img src="./assets/svgs/visa.svg" /></li>
 
-                        </ul>
-                    </div>
-                    <div class="bottom_footer_right">
-                        <small>سياسيه الخصوصيه | شروط الخدمه</small>
-                        <small>جميع الحقوق محفوظه لمتكبه جرير بس التطوير ل فاطمه امين :)</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <div id="modal" class="flex-center hidden">
         <div class="modal_warpper">
             <div class="modal_header">
@@ -1692,29 +1524,8 @@
                 </p>
             </div>
             <div class="modal_content">
-                <div id='login' class="login_section flex-col hidden">
-                    <div class="login_warpper">
-                        <div class="form_header">
-                            <h3>تسجيل الدخول</h3>
-                        </div>
-                        <form class="form_content form">
-                            <label class="input rounded-5">
-                                <input type="text" placeholder="الايميل او رقم الجوال">
-                            </label>
-                            <label class="input rounded-5">
-                                <div class="flex-row ">
-                                    <input type="text" placeholder="كلمه المرور">
-                                    <span class="forgot color-blue">نسيت</span>
-                                </div>
-                            </label>
-                            <button class="btn w-full form-btn bg-red color-white rounded-5">تسجيل الدخول</button>
-                        </form>
-                        <div class="regiter_links flex-col">
-                            <button id='create_account' class="color-gray"> ليس لديك حساب ؟</button>
-                            <button class="btn  bg-white rounded-5 color-gray mt-1">أنشاء حساب جديد</button>
-                        </div>
-                    </div>
-                </div>
+
+                <?php include_once __DIR__ . "/../users/login.php" ?>
                 <?php include_once __DIR__ . "/../users/register.php" ?>
                 <div id='image-gallery' class='hidden'>
                     <div class="arraws hidden">

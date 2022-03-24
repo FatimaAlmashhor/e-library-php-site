@@ -69,9 +69,8 @@ class Database
     }
 
     public function __destruct()
-    { {
-            $this->db = null;
-            $this->stmt = null;
-        }
+    {
+        $this->db = null;
+        $this->stmt = null;
     }
 }

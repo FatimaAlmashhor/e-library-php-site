@@ -1,9 +1,9 @@
-<div id="register" class="login_section flex-col hidden">
+<?php if (isset($_POST['submit'])) echo "here register" ?><div id="register" class="login_section flex-col hidden">
     <div class="login_warpper">
         <div class="form_header">
             <h3> أنشاء حساب</h3>
         </div>
-        <form class="form_content form" action="./register" method="POST">
+        <form class="form_content form" method="POST" action="./register">
             <div class="flex-row justify_content_between">
                 <div class="w-full  ml-1 flex-1">
                     <label class="input rounded-5 inline">
@@ -41,7 +41,8 @@
                 <input type="checkbox">
                 <span class="color-gray"> لانضمام للنشره البريديه</span>
             </label>
-            <button type="submit" class="btn w-full form-btn bg-gray color-gray rounded-5">انشاء حساب </button>
+            <button type="submit" name='sumbit' class="btn w-full form-btn bg-gray color-gray rounded-5">انشاء حساب
+            </button>
         </form>
         <div class="regiter_links flex-col">
             <p class="color-gray"> ليس لديك حساب ؟ <a id='login_in_existing_account' class="color-blue" href="#">تسجيل
@@ -49,3 +50,15 @@
         </div>
     </div>
 </div>
+<script>
+// function onSubmit() {
+//     xmlhttp.onreadystatechange = function() {
+//         // if (this.readyState == 4 && this.status == 200) {
+//         //     v.innerHTML = this.responseText;
+//         // }
+//     };
+//     console.log(xmlhttp);
+//     xmlhttp.open("POST", "./register", true);
+//     xmlhttp.send();
+// }
+</script>
