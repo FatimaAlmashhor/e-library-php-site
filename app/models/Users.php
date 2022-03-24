@@ -16,9 +16,10 @@ class Users
     function create($data)
     {
         try {
-            $keys = array_keys($data);
-            $values = array_values($data);
-            $this->conn->query("INSET INTO auth (" . $keys . ") VALUES (" . $values . ")")->done();
+            $keys = implode(",", array_keys($data));
+            $values = implode("','", array_values($data));
+
+            $this->conn->query("INSERT INTO auth (" . $keys . ") VALUES ('" . $values . "')")->done();
             if ($this->conn->execute())
                 return true;
         } catch (PDOException $thr) {

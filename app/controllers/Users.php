@@ -32,30 +32,36 @@ class Users
             $cpass = $_POST['cpassword'];
             // check password and email was valid before get into the model
             $checkVaildOf = new Validation();
-            print_r($checkVaildOf->name('password')->value($pass)->require()->check());
-            // if (
-            //     $checkVaildOf->password($pass, $cpass)->email($email)->check()
-            // ) {
-            //     // encrypt the password
-            //     $hashedPass =   password_hash($pass, PASSWORD_DEFAULT);
 
-            //     // prepar the data
-            //     $date = array(
-            //         "auth_name" => $fname  . " " . $lname,
-            //         "auth_email" => $email,
-            //         "auth_password" => $hashedPass
-            //     );
-            //     $model = new UserModel();
-            //     $isCreationDoneWell = $model->create($date);
-            //     echo ($isCreationDoneWell);
-            //     if ($isCreationDoneWell) {
-            //         $router->renderView('users/index');
-            //         echo "scuccess";
-            //     } else {
-            //         $router->renderView('users/index');
-            //         echo "faild";
-            //     }
-            // }
+            $checkVaildOf->name('password')->value($pass)->required();
+            $checkVaildOf->name('email')->value($email)->required();
+            $checkVaildOf->name('name')->value($fname)->min(5)->max(10)->required();
+            if (
+                $checkVaildOf->isSuccess() && Validation::is_email($email) &&
+                Validation::is_valid_pass($pass, $pass)
+            ) {
+                // encrypt the password
+                $hashedPass =   password_hash($pass, PASSWORD_DEFAULT);
+
+                // prepar the data
+                $date = array(
+                    "auth_name" => $fname  . " " . $lname,
+                    "auth_email" => $email,
+                    "auth_password" => $hashedPass
+                );
+                $model = new UserModel();
+                $isCreationDoneWell = $model->create($date);
+                if ($isCreationDoneWell) {
+                    $router->renderView('users/index');
+                    echo "scuccess";
+                } else {
+                    echo "faild";
+                }
+            } else {
+                $router->renderView('users/index', $checkVaildOf->getErrors());
+                echo "not valid";
+                print_r($checkVaildOf->getErrors());
+            }
         }
         // $router->renderView('users/index');
     }

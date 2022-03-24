@@ -139,6 +139,20 @@ class Validation
         if (!$this->isSuccess()) return $this->errors;
     }
 
+    public static function is_email($value)
+    {
+        if (filter_var($value, FILTER_VALIDATE_EMAIL)) return true;
+    }
+
+    public static function is_valid_pass($cpass, $pass)
+    {
+        if (!empty($pass) && !empty($pass)) {
+            if ($pass === $cpass) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public function check()
     {
