@@ -43,18 +43,22 @@ class Users
                 // encrypt the password
                 $hashedPass =   password_hash($pass, PASSWORD_DEFAULT);
 
-                // prepar the data
+                // prepear the data
                 $date = array(
                     "auth_name" => $fname  . " " . $lname,
                     "auth_email" => $email,
                     "auth_password" => $hashedPass
                 );
+
+                // connect to the model
                 $model = new UserModel();
                 $isCreationDoneWell = $model->create($date);
+
                 if ($isCreationDoneWell) {
                     $router->renderView('users/index');
                     echo "scuccess";
                 } else {
+                    $router->renderView('books/index', ['faild_massage' => 'Something seems not correct ']);
                     echo "faild";
                 }
             } else {

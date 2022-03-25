@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="./dist/tailwind.css" rel="stylesheet" type="text/css" />
     <link href="./css/main.css" rel="stylesheet" type="text/css" />
     <title>Products CRUD</title>
 </head>
@@ -142,8 +143,30 @@
     window.addEventListener('scroll', () => {
 
         window.scrollY === 0 ? header.classList.add('header_top') : header.classList.remove('header_top')
-    })
+    });
+    let msg = document.getElementById('timing_massage');
+
+    console.log(msg)
+    setTimeout(() => {
+        msg.animate([
+            // keyframes
+            {
+                transform: 'translateX(0px)'
+            },
+            {
+                transform: 'translateX(300px)'
+            }
+        ], {
+            // timing options
+            duration: 1000,
+            iterations: Infinity
+        });
+        setTimeout(() => {
+            msg.classList.add('hidden')
+        }, 1000)
+    }, 4000)
     </script>
+
 </body>
 
 </html>

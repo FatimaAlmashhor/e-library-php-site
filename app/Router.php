@@ -55,12 +55,19 @@ class Router
 
     public function renderView($view, $params = [])
     {
+        $popup = false;
+        $key  = '';
         foreach ($params as $key => $value) {
             $$key = $value;
+        }
+        echo $key;
+        if ($key == 'faild_massage') {
+            $popup = true;
         }
         ob_start();
         // include __DIR__ . "/views/templates/head.php";
         include __DIR__ . "/views/$view.php";
+        include __DIR__ . "/views/templates/popup.php";
         // include __DIR__ . "/views/templates/footer.php";
         $content = ob_get_clean();
         ob_end_clean();
