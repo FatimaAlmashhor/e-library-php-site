@@ -5,7 +5,7 @@
             <span>أدخل لحسابك اوسجل الان </span>
         </li>
         <li>
-            <a href='./index.html'>
+            <a href='./'>
                 <i class="nav_icon"><img src="./assets/svgs/star.svg" /></i>
                 <span> الرئسية </span>
             </a>

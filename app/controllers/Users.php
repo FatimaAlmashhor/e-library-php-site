@@ -17,7 +17,7 @@ class Users
     */
     public static function index(Router $router)
     {
-        $router->renderView('books/index');
+        $router->renderView('client/index');
     }
     public static function register(Router $router)
     {
@@ -55,14 +55,14 @@ class Users
                 $isCreationDoneWell = $model->create($date);
 
                 if ($isCreationDoneWell) {
-                    $router->renderView('users/index');
+                    $router->renderView('client/index');
                     echo "scuccess";
                 } else {
-                    $router->renderView('books/index', ['faild_massage' => 'Something seems not correct ']);
+                    $router->renderView('client/index', ['faild_massage' => 'Something seems not correct ']);
                     echo "faild";
                 }
             } else {
-                $router->renderView('users/index', $checkVaildOf->getErrors());
+                $router->renderView('client/index', $checkVaildOf->getErrors());
                 echo "not valid";
                 print_r($checkVaildOf->getErrors());
             }
