@@ -24,6 +24,10 @@ class Products
     }
     public static function admin(Router $router)
     {
-        $router->renderView('admin/index');
+        $router->renderView('admin/books/index');
+    }
+    public static function add(Router $router)
+    {
+        $router->renderView('admin/books/add');
     }
 }

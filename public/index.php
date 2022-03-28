@@ -30,7 +30,9 @@ $router->get('/category', [CategoriesController::class, 'index']);
 
 
 // Admin section 
-$router->get('/admin', [ProductsController::class, 'admin']);
+$router->get('/admin/', [ProductsController::class, 'admin']);
+$router->get('/admin/books', [ProductsController::class, 'admin']);
+$router->get('/admin/books/add', [ProductsController::class, 'add']);
 
 // categories
 $router->get('/admin/categories', [CategoriesController::class, 'admin']);
