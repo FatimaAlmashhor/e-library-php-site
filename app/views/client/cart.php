@@ -185,21 +185,3 @@
         </div>
     </div>
 </section>
-<div id="modal" class="flex-center hidden">
-    <div class="modal_warpper">
-        <div class="modal_header">
-            <p class="close" id='close_modal'>
-                <img src='../assets/svgs/close.svg' alt="close" />
-            </p>
-        </div>
-        <div class="modal_content">
-
-            <div id='image-gallery' class='hidden'>
-                <div class="arraws hidden">
-                    <img id='left' src="../assets/svgs/left-arrow.svg" alt="">
-                    <img id='right' src="../assets/svgs/right-arrow.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

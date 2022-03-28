@@ -113,14 +113,14 @@
         </div>
     </div>
 </footer>
-<script src="./public/js/modal.js"></script>
+<script src="./js/modal.js"></script>
 <!-- <script  src="./src/js/search.js"></script> -->
-<script src="./public/js/cart.js"></script>
-<script src="./public/js/mainSlider.js"></script>
-<script src="./public/js/carousel.js"></script>
-<script src="./public/js/toggleLangs.js"></script>
-<script src="./public/js/nav.js"></script>
-<script src="./public/js/countdown.js"></script>
+<script src="/js/cart.js"></script>
+<script src="./js/mainSlider.js"></script>
+<script src="./js/carousel.js"></script>
+<script src="./js/toggleLangs.js"></script>
+<script src="./js/nav.js"></script>
+<script src="./js/countdown.js"></script>
 <script>
 const header = document.querySelector('.header-warrper');
 window.addEventListener('scroll', () => {

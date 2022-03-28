@@ -127,7 +127,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2>العروض الحاليه</h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -347,7 +347,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2>الكتب الدنيه</h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -511,7 +511,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2>الكتب التاريخية </h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -711,7 +711,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2>الكتب السياسية </h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -911,7 +911,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2>الكتب الاقتصادية </h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -1111,7 +1111,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2> الطبخ </h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -1311,7 +1311,7 @@
             <div class="products_row">
                 <div class="products_row_title flex-row justify_content_between">
                     <h2> أفضل الروايات الرومنسية </h2>
-                    <a href="./pages/category.html" class="view-all color-blue font-14">
+                    <a href="./category" class="view-all color-blue font-14">
                         عرض الكل
                     </a>
                 </div>
@@ -1512,24 +1512,3 @@
         </section>
     </main>
 </header>
-
-<div id="modal" class="flex-center hidden">
-    <div class="modal_warpper">
-        <div class="modal_header">
-            <p class="close" id='close_modal'>
-                <img src='./assets/svgs/close.svg' alt="close" />
-            </p>
-        </div>
-        <div class="modal_content">
-
-            <?php include_once __DIR__ . "/../users/login.php" ?>
-            <?php include_once __DIR__ . "/../users/register.php" ?>
-            <div id='image-gallery' class='hidden'>
-                <div class="arraws hidden">
-                    <img id='left' src="../assets/svgs/left-arrow.svg" alt="">
-                    <img id='right' src="../assets/svgs/right-arrow.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

@@ -130,14 +130,41 @@
             </div>
         </div>
     </footer>
-    <script src="./js/modal.js"></script>
+
+    <!-- model  -->
+
+
+    <div id="modal" class="flex-center hidden">
+        <div class="modal_warpper">
+            <div class="modal_header">
+                <p class="close" id='close_modal'>
+                    <img src='./assets/svgs/close.svg' alt="close" />
+                </p>
+            </div>
+            <div class="modal_content">
+
+                <?php include_once __DIR__ . "./client/login.php" ?>
+                <?php include_once __DIR__ . "./client/register.php" ?>
+                <div id='image-gallery' class='hidden'>
+                    <div class="arraws hidden">
+                        <img id='left' src="../assets/svgs/left-arrow.svg" alt="">
+                        <img id='right' src="../assets/svgs/right-arrow.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type='module' src="./js/modal.js"></script>
     <!-- <script  src="./src/js/search.js"></script> -->
-    <script src="./js/cart.js"></script>
-    <script src="./js/mainSlider.js"></script>
-    <script src="./js/carousel.js"></script>
-    <script src="./js/toggleLangs.js"></script>
-    <script src="./js/nav.js"></script>
-    <script src="./js/countdown.js"></script>
+    <script type='module' src="./js/cart.js"></script>
+    <script type='module' src="./js/mainSlider.js"></script>
+    <script type='module' src="./js/carousel.js"></script>
+    <script type='module' src="./js/toggleLangs.js"></script>
+    <script type='module' src="./js/nav.js"></script>
+    <script type='module' src="./js/countdown.js"></script>
     <script>
     const header = document.querySelector('.header-warrper');
     window.addEventListener('scroll', () => {

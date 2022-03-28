@@ -161,10 +161,10 @@
                                 <img class="" src="../assets/svgs/arrow-down.svg" />
                             </span>
                         </div>
-                        <div class="btn flex-1 bg-red flex-row flex-center rounded-5 color-white">
+                        <a href='./cart' class="btn flex-1 bg-red flex-row flex-center rounded-5 color-white">
                             <span class="w-15"><img src="../assets/svgs/white-card-without-circule.svg" /></span>
                             <span class="font-bold">أضف الى السله</span>
-                        </div>
+                        </a>
                     </div>
                     <div class="payment_services row flex-row bg-gray rounded-5 p-1">
                         <p class="flex-1 flex-row flex-center">
@@ -272,21 +272,7 @@
         </section>
     </main>
 </header>
-<div id="modal" class="flex-center hidden">
-    <div class="modal_warpper">
-        <div class="modal_header">
-            <p class="close" id='close_modal'>
-                <img src='../assets/svgs/close.svg' alt="close" />
-            </p>
-        </div>
-        <div class="modal_content">
 
-            <div id='image-gallery' class='hidden'>
-                <div class="arraws hidden">
-                    <img id='left' src="../assets/svgs/left-arrow.svg" alt="">
-                    <img id='right' src="../assets/svgs/right-arrow.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<script src="./js/search.js"></script>
+<script type='module' src="./js/required.js"></script>

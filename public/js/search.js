@@ -55,13 +55,13 @@ const _fetchData = (arr) => {
     let li_element = document.createElement('li');
     li_element.innerHTML = `
   <div  class="product_warpper flex-col">
-    <a href="./details.html">
+    <a href="./details">
       <div class="product_img">
         <img src="${element.img}" alt="">
       </div>
     </a>
     <div class="product_content my-1">
-      <a href="./details.html">
+      <a href="./details">
         <div class="product_name">
           <h4 class="">${element.title}</h4>
           <p class='color-gray'>${element.name}</p> 

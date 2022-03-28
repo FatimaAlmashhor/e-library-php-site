@@ -6,7 +6,7 @@
   "scripts": {
     "start": " cd public && php -S localhost:5500" ,
     "build:tailwind": "npx tailwindcss -i ./public/css/tailwind.css -o ./public/dist/tailwind.css --watch",
-    "init": "cd _install && php setup.sql"
+    "init": "cd _install && php elib.sql"
   },
   "keywords": [
     "php"
