@@ -31,6 +31,9 @@ $router->get('/category', [CategoriesController::class, 'index']);
 
 // Admin section 
 $router->get('/admin', [ProductsController::class, 'admin']);
+
+// categories
 $router->get('/admin/categories', [CategoriesController::class, 'admin']);
+$router->get('/admin/categories/add', [CategoriesController::class, 'add']);
 
 $router->resolve();

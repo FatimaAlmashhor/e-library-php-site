@@ -22,4 +22,8 @@ class Categories
     {
         $router->renderView('admin/category/index');
     }
+    public static function add(Router $router)
+    {
+        $router->renderView('admin/category/add');
+    }
 }
