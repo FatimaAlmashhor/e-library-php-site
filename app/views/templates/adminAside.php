@@ -66,13 +66,19 @@
         <li class="menu-item">
             <a href="/admin/books" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div data-i18n="Calendar">Books</div>
+                <div data-i18n="Books">Books</div>
             </a>
         </li>
         <li class="menu-item">
             <a href="/admin/categories" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
-                <div data-i18n="Calendar">Categories</div>
+                <div data-i18n="Categories">Categories</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="/admin/authors" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Authors">Authors</div>
             </a>
         </li>
     </ul>
