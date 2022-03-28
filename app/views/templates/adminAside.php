@@ -64,6 +64,12 @@
     <ul class="menu-inner py-1">
         <!-- Dashboards -->
         <li class="menu-item">
+            <a href="/admin/books" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Calendar">Books</div>
+            </a>
+        </li>
+        <li class="menu-item">
             <a href="/admin/categories" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-calendar"></i>
                 <div data-i18n="Calendar">Categories</div>
