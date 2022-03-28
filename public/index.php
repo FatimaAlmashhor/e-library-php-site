@@ -26,4 +26,9 @@ $router->get('/checkout', [PaymentController::class, 'index']);
 
 $router->get('/category', [CategoriesController::class, 'index']);
 
+
+
+// Admin section 
+$router->get('/admin', [ProductsController::class, 'admin']);
+
 $router->resolve();

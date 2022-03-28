@@ -37,10 +37,7 @@ class Router
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         $url = $_SERVER['REQUEST_URI'] ?? '/';
-        // if ($url !== '/') {
-        //     $url = explode('=', $_SERVER['REDIRECT_QUERY_STRING']);
-        //     $url = "/" . $url[1];
-        // }
+        print_r($url);
         if ($method === 'get') {
             $fn = $this->getRoutes[$url] ?? null;
         } else {
@@ -71,6 +68,9 @@ class Router
         // include __DIR__ . "/views/templates/footer.php";
         $content = ob_get_clean();
         ob_end_clean();
-        include __DIR__ . "/views/_layout.php";
+        if (strpos($view, "admin") !== false)
+            include __DIR__ . "/views/_adminLayout.php";
+        else
+            include __DIR__ . "/views/_layout.php";
     }
 }

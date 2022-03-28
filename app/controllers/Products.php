@@ -22,4 +22,8 @@ class Products
     {
         $router->renderView('client/details');
     }
+    public static function admin(Router $router)
+    {
+        $router->renderView('admin/index');
+    }
 }
