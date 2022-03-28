@@ -38,7 +38,7 @@
 =========================================================
  -->
 <!-- beautify ignore:start -->
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed " dir="ltr" data-theme="theme-semi-dark" data-assets-path="./assets/" data-template="vertical-menu-template-semi-dark">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed " dir="ltr" data-theme="theme-semi-dark" data-assets-path="/adminAssests/" data-template="vertical-menu-template-semi-dark">
 
   
 <!--  , Sat, 26 Mar 2022 16:44:24 GMT -->
@@ -62,30 +62,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="./assets/vendor/fonts/boxicons.css" />
-    <link rel="stylesheet" href="./assets/vendor/fonts/fontawesome.css" />
-    <link rel="stylesheet" href="./assets/vendor/fonts/flag-icons.css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/fonts/flag-icons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="./assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="./assets/vendor/css/rtl/theme-semi-dark.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="./assets/css/demo.css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/css/rtl/theme-semi-dark.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/adminAssests/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="./assets/vendor/libs/apex-charts/apex-charts.css" />
-
+    <link rel="stylesheet" href="/adminAssests/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="/adminAssests/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="/adminAssests/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
+<link rel="stylesheet" href="/adminAssests/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css">
+<link rel="stylesheet" href="/adminAssests/vendor/libs/select2/select2.css" />
+<link rel="stylesheet" href="/adminAssests/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
     <!-- Page CSS -->
     
     <!-- Helpers -->
-    <script src="./assets/vendor/js/helpers.js"></script>
+    <script src="/adminAssests/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-    <script src="./assets/vendor/js/template-customizer.js"></script>
+    <script src="/adminAssests/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="./assets/js/config.js"></script>
+    <script src="/adminAssests/js/config.js"></script>
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -105,7 +108,6 @@
 
 <body>
 
-
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar  ">
         <div class="layout-container">
@@ -114,13 +116,34 @@
 
             <?php include_once __DIR__ . '/templates/adminAside.php' ?>
             <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
 
-            <!-- content  -->
-            <?php
-            echo $content; ?>
 
-            <!-- /content -->
+                <!-- Navbar -->
 
+                <?php include __DIR__ . '/templates/adminNav.php' ?>
+
+
+
+                <!-- / Navbar -->
+                <div class="content-wrapper">
+
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <!-- content  -->
+                        <?php
+                        echo $content; ?>
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- /content -->
+            </div>
 
         </div>
 
@@ -141,26 +164,26 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="./assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="./assets/vendor/libs/popper/popper.js"></script>
-    <script src="./assets/vendor/js/bootstrap.js"></script>
-    <script src="./assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/adminAssests/vendor/libs/jquery/jquery.js"></script>
+    <script src="/adminAssests/vendor/libs/popper/popper.js"></script>
+    <script src="/adminAssests/vendor/js/bootstrap.js"></script>
+    <script src="/adminAssests/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="./assets/vendor/libs/hammer/hammer.js"></script>
-    <script src="./assets/vendor/libs/i18n/i18n.js"></script>
-    <script src="./assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="/adminAssests/vendor/libs/hammer/hammer.js"></script>
+    <script src="/adminAssests/vendor/libs/i18n/i18n.js"></script>
+    <script src="/adminAssests/vendor/libs/typeahead-js/typeahead.js"></script>
 
-    <script src="./assets/vendor/js/menu.js"></script>
+    <script src="/adminAssests/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="./assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="/adminAssests/vendor/libs/apex-charts/apexcharts.js"></script>
 
     <!-- Main JS -->
-    <script src="./assets/js/main.js"></script>
+    <script src="/adminAssests/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="./assets/js/dashboards-crm.js"></script>
+    <script src="/adminAssests/js/dashboards-crm.js"></script>
 
 </body>
 

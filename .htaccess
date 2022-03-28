@@ -4,7 +4,7 @@ RewriteEngine On
 
 RewriteBase /
 
-RewriteCond %{REQUEST_FILENAME} !/(css|fonts|icon|include|js|assets|dist)/
+RewriteCond %{REQUEST_FILENAME} !/(css|fonts|icon|include|js|assets|dist|adminAssests)/
 
 RewriteCond %{REQUEST_FILE_NAME} !-d
 RewriteCond %{REQUEST_FILE_NAME} !-f
