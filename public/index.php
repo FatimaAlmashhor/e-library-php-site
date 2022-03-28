@@ -13,6 +13,7 @@ require_once __DIR__ . "/../config/index.php";
 $database = new \App\Database();
 $router = new Router($database);
 
+// client section
 $router->get('/', [ProductsController::class, 'index']);
 $router->get('/register', [ProductsController::class, 'index']);
 $router->post('/register', [UsersController::class, 'register']);
@@ -30,5 +31,6 @@ $router->get('/category', [CategoriesController::class, 'index']);
 
 // Admin section 
 $router->get('/admin', [ProductsController::class, 'admin']);
+$router->get('/admin/categories', [CategoriesController::class, 'admin']);
 
 $router->resolve();

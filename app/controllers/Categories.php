@@ -18,4 +18,8 @@ class Categories
     {
         $router->renderView('client/category');
     }
+    public static function admin(Router $router)
+    {
+        $router->renderView('admin/category/index');
+    }
 }
