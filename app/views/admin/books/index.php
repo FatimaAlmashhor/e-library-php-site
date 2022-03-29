@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<?php print_r($books); ?><div class="content-wrapper">
 
     <!-- Content -->
 
@@ -33,11 +33,12 @@
                                                 type="search" class="form-control" placeholder="Search.."
                                                 aria-controls="DataTables_Table_0"></label></div>
                                 </div>
+
                                 <!-- <div class="dt-buttons"><button class="dt-button add-new btn btn-primary mb-3 mb-md-0"
                                         tabindex="0" aria-controls="DataTables_Table_0" type="button"
                                         data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
                                             Book</span></button> </div> -->
-                                <div class="dt-buttons"><a href='admin/books/add'
+                                <div class="dt-buttons"><a href='/admin/books/add'
                                         class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                         aria-controls="DataTables_Table_0"
                                         data-bs-target="#addPermissionModal"><span>Add
@@ -54,6 +55,9 @@
                                     style="width: 68px; display: none;" aria-label=""></th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
                                     colspan="1" style="width: 168px;"
+                                    aria-label="Name: activate to sort column ascending">Image</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1" style="width: 168px;"
                                     aria-label="Name: activate to sort column ascending">Name</th>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"
                                     aria-label="Assigned To">Assigned To</th>
@@ -63,9 +67,41 @@
                                     aria-label="Actions">Actions</th>
                             </tr>
                         </thead>
+                        <?php foreach ($books as $book) {
+                        ?>
+
                         <tbody>
                             <tr class="odd">
-                                <td colspan="4" class="dataTables_empty" valign="top">Loading...</td>
+                            <tr>
+                                <td>
+                                    <?php ?>
+                                </td>
+                                <td> <strong>
+                                        <?php echo $book->title ?></strong></td>
+                                <td><?php echo $book->price ?></td>
+                                <td>
+                                    <?php echo $book->quantity ?>
+                                </td>
+                                <td><span
+                                        class="badge bg-label-primary me-1"><?php echo $book->is_active == 1 ? 'active' : 'Not active' ?></span>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                            data-bs-toggle="dropdown"><i
+                                                class="bx bx-dots-vertical-rounded"></i></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                                    class="bx bx-trash me-1"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                            ?>
                             </tr>
                         </tbody>
                     </table>
