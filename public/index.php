@@ -8,6 +8,7 @@ use App\Controllers\Payment as PaymentController;
 use App\Controllers\Categories as CategoriesController;
 use App\Controllers\Authors as AuthorsController;
 use App\Controllers\Publishers as PublishersController;
+use App\Controllers\Cities as CitiesController;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../config/index.php";
@@ -60,5 +61,12 @@ $router->post('/admin/users', [UsersController::class, 'adminUsers']);
 $router->post('/admin/users/add', [UsersController::class, 'adminAddUsers']);
 $router->post('/admin/users/edit', [UsersController::class, 'adminEditUsers']);
 $router->post('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']);
+
+
+// cities
+$router->post('/admin/cities', [CitiesController::class, 'index']);
+$router->post('/admin/cities/add', [UsersController::class, 'add']);
+$router->post('/admin/cities/edit', [UsersController::class, 'edit']);
+$router->post('/admin/cities/delete', [UsersController::class, 'delete']);
 
 $router->resolve();
