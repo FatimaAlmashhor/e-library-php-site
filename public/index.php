@@ -44,6 +44,7 @@ $router->post('/admin/books/add', [ProductsController::class, 'upload']);
 // categories
 $router->get('/admin/categories', [CategoriesController::class, 'admin']);
 $router->get('/admin/categories/add', [CategoriesController::class, 'add']);
+$router->post('/admin/categories/add', [CategoriesController::class, 'upload']);
 
 
 // authors
