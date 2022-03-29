@@ -81,6 +81,12 @@
                 <div data-i18n="Authors">Authors</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="/admin/publishers" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Publishers">Publishers</div>
+            </a>
+        </li>
     </ul>
 
 
