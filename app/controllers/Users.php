@@ -45,9 +45,11 @@ class Users
 
                 // prepear the data
                 $date = array(
-                    "auth_name" => $fname  . " " . $lname,
-                    "auth_email" => $email,
-                    "auth_password" => $hashedPass
+                    "name" => $fname  . " " . $lname,
+                    "email" => $email,
+                    "password" => $hashedPass,
+                    "is_active" => 1,
+                    "role_id" => 1
                 );
 
                 // connect to the model
@@ -67,7 +69,7 @@ class Users
                 print_r($checkVaildOf->getErrors());
             }
         }
-        // $router->renderView('users/index');
+        $router->renderView('client/index');
     }
     public static function login(Router $router)
     {
