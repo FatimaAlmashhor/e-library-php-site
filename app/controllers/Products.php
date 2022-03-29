@@ -69,33 +69,33 @@ class Products
             // upload the image 
             $image = new UploadFile();
             if ($image->uploadIamge($bookImage)) {
-                echo 'hello';
-                print_r($image->uploadIamge($bookImage));
+                $imageName = $image->uploadIamge($bookImage);
             }
-            // $data = array(
-            //     "title"  => $title,
-            //     "price" => $price,
-            //     "description" => $des,
-            //     "category_id" => $cates,
-            //     "author_id" => $author,
-            //     "publisher_id" => $publisher,
-            //     "is_active" => $active,
-            //     "format" => $format,
-            //     "pages_number " => $pageNumber,
-            //     "created_by" => 6,
-            //     "quantity" => $qty
-            // );
-            // $book = new ProductsModel();
-            // if ($book->create($data)) {
-            //     $message = array(
-            //         "success_massage" => "Book added scuccessfuly"
-            //     );
-            // } else {
-            //     $message = array(
-            //         "faild_massage" => "Book could not be adding"
-            //     );
-            // }
-            // $router->renderView('admin/books/index', $message);
+            $data = array(
+                "title"  => $title,
+                "price" => $price,
+                "description" => $des,
+                "category_id" => $cates,
+                "author_id" => $author,
+                "publisher_id" => $publisher,
+                "is_active" => 1,
+                "format" => $format,
+                "pages_number " => $pageNumber,
+                "created_by" => 6,
+                "quantity" => $qty,
+                "image" => $imageName
+            );
+            $book = new ProductsModel();
+            if ($book->create($data)) {
+                $message = array(
+                    "success_massage" => "Book added scuccessfuly"
+                );
+            } else {
+                $message = array(
+                    "faild_massage" => "Book could not be adding"
+                );
+            }
+            $router->renderView('admin/books/index', [$message, ProductsModel::$books]);
         }
     }
 }
