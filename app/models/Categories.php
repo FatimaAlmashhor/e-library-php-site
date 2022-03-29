@@ -14,6 +14,10 @@ class Categories
     {
         $this->conn = new Database();
     }
+    function __set($name, $value)
+    {
+        $this->$name = $value;
+    }
     function create($data)
     {
         try {
