@@ -75,15 +75,21 @@
     <link rel="stylesheet" href="/adminAssests/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="/adminAssests/vendor/libs/typeahead-js/typeahead.css" />
     <link rel="stylesheet" href="/adminAssests/vendor/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="/adminAssests/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
+    <link rel="stylesheet" href="/adminAssests/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
 <link rel="stylesheet" href="/adminAssests/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css">
 <link rel="stylesheet" href="/adminAssests/vendor/libs/select2/select2.css" />
 <link rel="stylesheet" href="/adminAssests/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
-    <!-- Page CSS -->
+<link rel="stylesheet" href="/adminAssests/vendor/libs/tagify/tagify.css" />
+<link rel="stylesheet" href="/adminAssests/vendor/libs/bootstrap-select/bootstrap-select.css" />
+<link rel="stylesheet" href="/adminAssests/vendor/libs/typeahead-js/typeahead.css" />   
+<!-- Page CSS -->
     
     <!-- Helpers -->
     <script src="/adminAssests/vendor/js/helpers.js"></script>
-
+    <script src="/adminAssests/vendor/js/bootstrap.js"></script>
+    <script src="/adminAssests/vendor/libs/jquery/jquery.js"></script>
+    <script src="/adminAssests/vendor/libs/popper/popper.js"></script>
+    
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
     <script src="/adminAssests/vendor/js/template-customizer.js"></script>
@@ -164,9 +170,8 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="/adminAssests/vendor/libs/jquery/jquery.js"></script>
-    <script src="/adminAssests/vendor/libs/popper/popper.js"></script>
-    <script src="/adminAssests/vendor/js/bootstrap.js"></script>
+
+
     <script src="/adminAssests/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
     <script src="/adminAssests/vendor/libs/hammer/hammer.js"></script>

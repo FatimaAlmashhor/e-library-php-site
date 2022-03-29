@@ -99,6 +99,12 @@
                 <div data-i18n="Cities">Cities</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="/admin/offers" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Offers">Offers</div>
+            </a>
+        </li>
     </ul>
 
 
