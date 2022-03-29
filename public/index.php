@@ -55,4 +55,10 @@ $router->get('/admin/publishers/edit', [PublishersController::class, 'edit']);
 $router->get('/admin/publishers/delete', [PublishersController::class, 'delete']);
 
 
+// users
+$router->post('/admin/users', [UsersController::class, 'adminUsers']);
+$router->post('/admin/users/add', [UsersController::class, 'adminAddUsers']);
+$router->post('/admin/users/edit', [UsersController::class, 'adminEditUsers']);
+$router->post('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']);
+
 $router->resolve();

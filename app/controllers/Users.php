@@ -74,4 +74,21 @@ class Users
         echo "Login ";
         $router->renderView('users/index');
     }
+
+    public static function adminUsers(Router $router)
+    {
+        $router->renderView('admin/users/index');
+    }
+    public static function adminAddUsers(Router $router)
+    {
+        $router->renderView('admin/users/add');
+    }
+    public static function adminEditUsers(Router $router)
+    {
+        $router->renderView('admin/users/edit');
+    }
+    public static function adminDeleteUsers(Router $router)
+    {
+        $router->renderView('admin/users/add');
+    }
 }
