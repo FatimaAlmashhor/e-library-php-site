@@ -7,6 +7,8 @@ namespace App\Controllers;
 use App\Router;
 use App\Models\Products as ProductsModel;
 use App\Models\Categories as CategoriesModel;
+use App\Models\Authors as AuthorsModel;
+use App\Models\Publishers as PublishersModel;
 use App\Utils\Validation;
 
 use PDO;
@@ -31,8 +33,16 @@ class Products
     public static function add(Router $router)
     {
         $cates = new CategoriesModel();
+        $auth = new AuthorsModel();
+        $publishers = new PublishersModel();
         if ($cates->selectAll()) {
             print_r(CategoriesModel::$categories);
+        }
+        if ($auth->selectAll()) {
+            print_r(AuthorsModel::$authors);
+        }
+        if ($publishers->selectAll()) {
+            print_r(PublishersModel::$publishers);
         }
         // $router->renderView('admin/books/add');
     }
