@@ -76,14 +76,15 @@
     <link rel="stylesheet" href="/adminAssests/vendor/libs/typeahead-js/typeahead.css" />
     <link rel="stylesheet" href="/adminAssests/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="/adminAssests/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
+    <link rel="stylesheet" href="/adminAssests/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
 <link rel="stylesheet" href="/adminAssests/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css">
 <link rel="stylesheet" href="/adminAssests/vendor/libs/select2/select2.css" />
 <link rel="stylesheet" href="/adminAssests/vendor/libs/formvalidation/dist/css/formValidation.min.css" />
 <link rel="stylesheet" href="/adminAssests/vendor/libs/tagify/tagify.css" />
 <link rel="stylesheet" href="/adminAssests/vendor/libs/bootstrap-select/bootstrap-select.css" />
-<link rel="stylesheet" href="/adminAssests/vendor/libs/typeahead-js/typeahead.css" />   
+<link rel="stylesheet" href="/adminAssests/vendor/libs/typeahead-js/typeahead.css" />  
 <!-- Page CSS -->
-    
+
     <!-- Helpers -->
     <script src="/adminAssests/vendor/js/helpers.js"></script>
     <script src="/adminAssests/vendor/js/bootstrap.js"></script>

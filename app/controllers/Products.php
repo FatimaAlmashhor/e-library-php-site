@@ -5,6 +5,8 @@ namespace App\Controllers;
 
 
 use App\Router;
+use App\Models\Products as ProductsModel;
+use App\Models\Categories as CategoriesModel;
 use App\Utils\Validation;
 
 use PDO;
@@ -28,6 +30,10 @@ class Products
     }
     public static function add(Router $router)
     {
-        $router->renderView('admin/books/add');
+        $cates = new CategoriesModel();
+        if ($cates->selectAll()) {
+            print_r(CategoriesModel::$categories);
+        }
+        // $router->renderView('admin/books/add');
     }
 }

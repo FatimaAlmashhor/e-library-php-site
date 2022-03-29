@@ -6,27 +6,17 @@ namespace App\Models;
 use App\Database;
 use PDO, PDOException, PDOStatement;
 
-class Users
+class Categories
 {
-    public static $users;
+    public static $categories;
     private $conn;
     function __construct()
     {
         $this->conn = new Database();
     }
-    function __set($name, $value)
-    {
-        $this->$name = $value;
-    }
     function create($data)
     {
         try {
-            $keys = implode(",", array_keys($data));
-            $values = implode("','", array_values($data));
-
-            $this->conn->query("INSERT INTO users (" . $keys . ") VALUES ('" . $values . "')")->done();
-            if ($this->conn->execute())
-                return true;
         } catch (PDOException $thr) {
             return false;
         } catch (PDOStatement $thr) {
@@ -36,9 +26,9 @@ class Users
     function selectAll()
     {
         try {
-            $this->conn->query("SELECT * FROM users")->done();
+            $this->conn->query("SELECT * FROM `categories`")->done();
             if ($this->conn->execute()) {
-                self::$users = $this->conn->fetchAll();
+                self::$categories = $this->conn->fetchAll();
                 return  true;
             } else {
                 return false;
