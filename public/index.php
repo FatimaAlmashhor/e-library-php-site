@@ -34,9 +34,12 @@ $router->get('/category', [CategoriesController::class, 'index']);
 
 
 // Admin section 
+// books
 $router->get('/admin', [ProductsController::class, 'admin']);
 $router->get('/admin/books', [ProductsController::class, 'admin']);
 $router->get('/admin/books/add', [ProductsController::class, 'add']);
+
+$router->post('/admin/books/add', [ProductsController::class, 'upload']);
 
 // categories
 $router->get('/admin/categories', [CategoriesController::class, 'admin']);
@@ -74,5 +77,7 @@ $router->get('/admin/cities/delete', [UsersController::class, 'delete']);
 // offers
 $router->get('/admin/offers', [OffersController::class, 'index']);
 $router->get('/admin/offers/add', [OffersController::class, 'add']);
+
+
 
 $router->resolve();
