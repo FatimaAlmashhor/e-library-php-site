@@ -9,6 +9,7 @@ use App\Controllers\Categories as CategoriesController;
 use App\Controllers\Authors as AuthorsController;
 use App\Controllers\Publishers as PublishersController;
 use App\Controllers\Cities as CitiesController;
+use App\Controllers\Offers as OffersController;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../config/index.php";
@@ -57,16 +58,21 @@ $router->get('/admin/publishers/delete', [PublishersController::class, 'delete']
 
 
 // users
-$router->post('/admin/users', [UsersController::class, 'adminUsers']);
-$router->post('/admin/users/add', [UsersController::class, 'adminAddUsers']);
-$router->post('/admin/users/edit', [UsersController::class, 'adminEditUsers']);
-$router->post('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']);
+$router->get('/admin/users', [UsersController::class, 'adminUsers']);
+$router->get('/admin/users/add', [UsersController::class, 'adminAddUsers']);
+$router->get('/admin/users/edit', [UsersController::class, 'adminEditUsers']);
+$router->get('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']);
 
 
 // cities
-$router->post('/admin/cities', [CitiesController::class, 'index']);
-$router->post('/admin/cities/add', [UsersController::class, 'add']);
-$router->post('/admin/cities/edit', [UsersController::class, 'edit']);
-$router->post('/admin/cities/delete', [UsersController::class, 'delete']);
+$router->get('/admin/cities', [CitiesController::class, 'index']);
+$router->get('/admin/cities/add', [UsersController::class, 'add']);
+$router->get('/admin/cities/edit', [UsersController::class, 'edit']);
+$router->get('/admin/cities/delete', [UsersController::class, 'delete']);
+
+
+// offers
+$router->get('/admin/offers', [OffersController::class, 'index']);
+$router->get('/admin/offers/add', [OffersController::class, 'add']);
 
 $router->resolve();
