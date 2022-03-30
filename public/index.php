@@ -10,6 +10,7 @@ use App\Controllers\Authors as AuthorsController;
 use App\Controllers\Publishers as PublishersController;
 use App\Controllers\Cities as CitiesController;
 use App\Controllers\Offers as OffersController;
+use App\Controllers\Orders as OrdersController;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../config/index.php";
@@ -81,5 +82,10 @@ $router->get('/admin/offers', [OffersController::class, 'index']);
 $router->get('/admin/offers/add', [OffersController::class, 'add']);
 
 
+// orders
+$router->get('/admin/cities', [OrdersController::class, 'index']);
+$router->get('/admin/cities/add', [OrdersController::class, 'add']);
+$router->get('/admin/cities/edit', [OrdersController::class, 'edit']);
+$router->get('/admin/cities/delete', [OrdersController::class, 'delete']);
 
 $router->resolve();
