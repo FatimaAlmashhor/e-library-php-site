@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Router;
+use App\Models\Publishers as PublisherModel;
 use App\Utils\Validation;
 
 use PDO;
@@ -16,7 +17,8 @@ class Publishers
     */
     public static function index(Router $router)
     {
-        $router->renderView('admin/publishers/index');
+         new PublisherModel();
+        $router->renderView('admin/publishers/index' , ['publisher' => PublisherModel::$publishers]);
     }
     public static function add(Router $router)
     {

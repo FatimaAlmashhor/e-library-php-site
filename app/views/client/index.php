@@ -1,5 +1,3 @@
-<?php print_r($books) ?>
-
 <header>
     <div class="header-warrper container header_top ">
         <a href='./' class="logo">
