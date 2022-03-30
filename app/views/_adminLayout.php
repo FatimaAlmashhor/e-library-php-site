@@ -52,7 +52,7 @@
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
-    
+    <link href="/../dist/tailwind.css" rel="stylesheet" type="text/css" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/assets/img/favicon/favicon.ico" />
 
@@ -113,7 +113,7 @@
 
 </head>
 
-<body>
+<body class="relative">
 
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar  ">

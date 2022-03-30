@@ -165,34 +165,7 @@
     <script type='module' src="./js/toggleLangs.js"></script>
     <script type='module' src="./js/nav.js"></script>
     <script type='module' src="./js/countdown.js"></script>
-    <script>
-    const header = document.querySelector('.header-warrper');
-    window.addEventListener('scroll', () => {
 
-        window.scrollY === 0 ? header.classList.add('header_top') : header.classList.remove('header_top')
-    });
-    let msg = document.getElementById('timing_massage');
-
-    console.log(msg)
-    setTimeout(() => {
-        msg.animate([
-            // keyframes
-            {
-                transform: 'translateX(0px)'
-            },
-            {
-                transform: 'translateX(300px)'
-            }
-        ], {
-            // timing options
-            duration: 1000,
-            iterations: Infinity
-        });
-        setTimeout(() => {
-            msg.classList.add('hidden')
-        }, 1000)
-    }, 4000)
-    </script>
 
 </body>
 

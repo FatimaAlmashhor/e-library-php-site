@@ -34,7 +34,7 @@
                                         tabindex="0" aria-controls="DataTables_Table_0" type="button"
                                         data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
                                             Book</span></button> </div> -->
-                            <div class="dt-buttons"><a href='/admin/categories/add'
+                            <div class="dt-buttons"><a href='/admin/publishers/add'
                                     class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                     aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
                                         publisher</span></a> </div>

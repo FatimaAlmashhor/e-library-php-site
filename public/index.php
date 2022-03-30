@@ -60,6 +60,7 @@ $router->get('/admin/authors/delete', [AuthorsController::class, 'delete']);
 // publishers
 $router->get('/admin/publishers', [PublishersController::class, 'index']);
 $router->get('/admin/publishers/add', [PublishersController::class, 'add']);
+$router->post('/admin/publishers/add', [PublishersController::class, 'upload']);
 $router->get('/admin/publishers/edit', [PublishersController::class, 'edit']);
 $router->get('/admin/publishers/delete', [PublishersController::class, 'delete']);
 

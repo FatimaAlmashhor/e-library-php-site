@@ -59,12 +59,13 @@ class Router
     public function renderView($view, $params = [])
     {
         $popup = false;
-        // $key  = '';
         foreach ($params as $key => $value) {
             $$key = $value;
         }
-        echo $key;
-        if (isset($faild_massage) || isset($success_massage)) {
+
+        print_r($massage);
+
+        if (isset($massage)) {
             $popup = true;
         }
         ob_start();
