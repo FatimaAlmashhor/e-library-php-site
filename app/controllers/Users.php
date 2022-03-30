@@ -79,7 +79,8 @@ class Users
 
     public static function adminUsers(Router $router)
     {
-        $router->renderView('admin/users/index');
+        new UserModel();
+        $router->renderView('admin/users/index', ['users' => UserModel::$users]);
     }
     public static function adminAddUsers(Router $router)
     {
