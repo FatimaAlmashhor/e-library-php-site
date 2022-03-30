@@ -88,4 +88,9 @@ $router->get('/admin/orders/add', [OrdersController::class, 'add']);
 $router->get('/admin/orders/edit', [OrdersController::class, 'edit']);
 $router->get('/admin/orders/delete', [OrdersController::class, 'delete']);
 
+// payment
+$router->get('/admin/payments', [PaymentController::class, 'adminPayment']);
+$router->get('/admin/payments/add', [UsersController::class, 'adminAddPayment']);
+$router->get('/admin/payments/edit', [UsersController::class, 'adminEditPayment']);
+$router->get('/admin/payments/delete', [UsersController::class, 'adminDeletePayment']);
 $router->resolve();
