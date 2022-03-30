@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Router;
+use App\Models\Offers as OffersModel;
 use App\Utils\Validation;
 
 use PDO;
@@ -16,7 +17,8 @@ class Offers
     */
     public static function index(Router $router)
     {
-        $router->renderView('admin/offers/index');
+        new OffersModel();
+        $router->renderView('admin/offers/index', ['offers' => OffersModel::$offers]);
     }
     public static function add(Router $router)
     {
