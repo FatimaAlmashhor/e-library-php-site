@@ -64,7 +64,7 @@ class Router
             $$key = $value;
         }
         echo $key;
-        if ($key == 'faild_massage' || $key == 'success_massage') {
+        if (isset($faild_massage) || isset($success_massage)) {
             $popup = true;
         }
         ob_start();

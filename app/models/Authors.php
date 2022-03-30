@@ -22,6 +22,14 @@ class Authors
     function create($data)
     {
         try {
+            $keys = implode(",", array_keys($data));
+            $values = implode("','", array_values($data));
+
+            $this->conn->query("INSERT INTO authors (" . $keys . ") VALUES ('" . $values . "')")->done();
+            if ($this->conn->execute())
+                return true;
+            else
+                return false;
         } catch (PDOException $thr) {
             return false;
         } catch (PDOStatement $thr) {

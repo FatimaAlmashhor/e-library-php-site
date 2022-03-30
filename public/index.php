@@ -52,6 +52,7 @@ $router->post('/admin/categories/add', [CategoriesController::class, 'upload']);
 // authors
 $router->get('/admin/authors', [AuthorsController::class, 'index']);
 $router->get('/admin/authors/add', [AuthorsController::class, 'add']);
+$router->post('/admin/authors/add', [AuthorsController::class, 'upload']);
 $router->get('/admin/authors/edit', [AuthorsController::class, 'edit']);
 $router->get('/admin/authors/delete', [AuthorsController::class, 'delete']);
 
