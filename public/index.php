@@ -72,9 +72,9 @@ $router->get('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']
 
 // cities
 $router->get('/admin/cities', [CitiesController::class, 'index']);
-$router->get('/admin/cities/add', [UsersController::class, 'add']);
-$router->get('/admin/cities/edit', [UsersController::class, 'edit']);
-$router->get('/admin/cities/delete', [UsersController::class, 'delete']);
+$router->get('/admin/cities/add', [CitiesController::class, 'add']);
+$router->get('/admin/cities/edit', [CitiesController::class, 'edit']);
+$router->get('/admin/cities/delete', [CitiesController::class, 'delete']);
 
 
 // offers
@@ -83,9 +83,9 @@ $router->get('/admin/offers/add', [OffersController::class, 'add']);
 
 
 // orders
-$router->get('/admin/cities', [OrdersController::class, 'index']);
-$router->get('/admin/cities/add', [OrdersController::class, 'add']);
-$router->get('/admin/cities/edit', [OrdersController::class, 'edit']);
-$router->get('/admin/cities/delete', [OrdersController::class, 'delete']);
+$router->get('/admin/orders', [OrdersController::class, 'index']);
+$router->get('/admin/orders/add', [OrdersController::class, 'add']);
+$router->get('/admin/orders/edit', [OrdersController::class, 'edit']);
+$router->get('/admin/orders/delete', [OrdersController::class, 'delete']);
 
 $router->resolve();

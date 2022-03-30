@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Router;
+use App\Models\Cities as CitiesModel;
 use App\Utils\Validation;
 
 use PDO;
@@ -16,7 +17,8 @@ class Cities
     */
     public static function index(Router $router)
     {
-        $router->renderView('admin/cities/index');
+        new CitiesModel();
+        $router->renderView('admin/cities/index', ['cities' => CitiesModel::$cities]);
     }
     public static function add(Router $router)
     {
