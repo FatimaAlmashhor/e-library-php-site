@@ -1,5 +1,4 @@
 <!-- Content -->
-
 <div class="container-xxl flex-grow-1 container-p-y">
 
 
@@ -68,8 +67,8 @@
                     <tbody>
                         <tr class="odd">
                         <tr>
-                            <td>
-                                <?php ?>
+                            <td style="height:100px; width:auto">
+                                <img style="height:100% " src='/uploads/<?php echo $book->image ?>' />
                             </td>
                             <td> <strong>
                                     <?php echo $book->title ?></strong></td>
@@ -109,7 +108,8 @@
                             <ul class="pagination">
                                 <li class="paginate_button page-item previous disabled"
                                     id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0"
-                                        data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                        data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                </li>
                                 <li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a
                                         href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0"
                                         class="page-link">Next</a></li>

@@ -26,6 +26,7 @@ $router->post('/login', [UsersController::class, 'login']);
 $router->get('/details', [ProductsController::class, 'details']);
 
 $router->get('/cart', [CartController::class, 'index']);
+$router->get('/admin/cart/:id/:country', [CartController::class, 'test($param)']);
 
 $router->get('/checkout', [PaymentController::class, 'index']);
 

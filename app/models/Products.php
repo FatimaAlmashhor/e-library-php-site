@@ -13,6 +13,7 @@ class Products
     function __construct()
     {
         $this->conn = new Database();
+        $this->selectAll();
     }
     function create($data)
     {
@@ -31,15 +32,32 @@ class Products
             return false;
         }
     }
-    
-    
+
+
     function selectAll()
     {
         try {
-            $this->conn->query("SELECT * FROM `books`")->done();
+            $this->conn->query("SELECT * FROM `books` ")->done();
             if ($this->conn->execute()) {
                 self::$books = $this->conn->fetchAll();
                 return  true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $thr) {
+            return false;
+        } catch (PDOStatement $thr) {
+            return false;
+        }
+    }
+    function selectBooksOfcategory($cate_id)
+    {
+        try {
+            $this->conn->query("SELECT * FROM `books` WHERE `category_id` =:cateId ")->done();
+            $this->conn->bind(':cateId',  $cate_id,  PDO::PARAM_INT);
+
+            if ($this->conn->execute()) {
+                return $this->conn->fetchAll();
             } else {
                 return false;
             }

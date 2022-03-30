@@ -13,6 +13,7 @@ class Users
     function __construct()
     {
         $this->conn = new Database();
+        $this->selectAll();
     }
     function __set($name, $value)
     {

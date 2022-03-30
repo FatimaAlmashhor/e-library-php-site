@@ -34,11 +34,17 @@ class Categories
             // $active = $_POST['isActive'];
             $image = $_FILES['cateImage'];
 
-            // upload the image 
-            $cate = new UploadFile();
-            if ($cate->uploadIamge($image)) {
-                $imageName = $cate->uploadIamge($image);
+            // check if the image not empty or put the default
+            if (empty($image['name']) == 1) {
+                $imageName = 'add-cart.svg';
+            } else {
+                // upload the image 
+                $cate = new UploadFile();
+                if ($cate->uploadIamge($image)) {
+                    $imageName = $cate->uploadIamge($image);
+                }
             }
+
             $data = array(
                 "name"  => $name,
                 "created_by" => 6,
@@ -55,6 +61,7 @@ class Categories
                     "faild_massage" => "Book could not be adding"
                 );
             }
+            new CategoriesModel();
             $router->renderView('admin/category/index', [$message, 'categories' => CategoriesModel::$categories]);
         }
     }

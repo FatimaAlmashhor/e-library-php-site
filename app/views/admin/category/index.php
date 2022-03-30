@@ -69,7 +69,7 @@
                         <tr class="odd">
                         <tr>
                             <td>
-                                <?php ?>
+                                <img src='/uploads/<?php echo $categoy->image ?>' />
                             </td>
                             <td> <strong>
                                     <?php echo $categoy->name ?></strong></td>

@@ -7,6 +7,7 @@
 
 namespace App;
 
+use App\Utils\GetMeParams;
 
 
 class Router
@@ -15,15 +16,18 @@ class Router
     public array $getRoutes = [];
     public array $postRoutes = [];
 
+    public array $params = [];
     public ?Database $database = null;
 
     public function __construct(Database $database)
     {
+
         $this->database = $database;
     }
 
     public function get($url, $fn)
     {
+        // print_r($url);
         $this->getRoutes[$url] = $fn;
     }
 
@@ -37,7 +41,9 @@ class Router
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         $url = $_SERVER['REQUEST_URI'] ?? '/';
-        print_r($url);
+        $params = new GetMeParams();
+        $params->getParams('users/:id');
+        // print_r($url);
         if ($method === 'get') {
             $fn = $this->getRoutes[$url] ?? null;
         } else {

@@ -16,13 +16,27 @@ use PDO;
 class Products
 {
 
+    // function __construct()
+    // {
+    //     new ProductsModel();
+    //     new CategoriesModel();
+    //     new AuthorsModel();
+    //     new PublishersModel();
+    // }
     /*
     @param Router to reach the database and view ;
     */
 
     public static function index(Router $router)
     {
-        $router->renderView('client/index');
+        $book = new ProductsModel();
+        new CategoriesModel();
+        foreach (CategoriesModel::$categories as $cate) {
+            echo "</br>";
+            $arr[$cate->id] = $book->selectBooksOfcategory($cate->id);
+        }
+        // print_r($arr);
+        $router->renderView('client/index', ["books" => $arr, "categories" => CategoriesModel::$categories]);
     }
     public static function details(Router $router)
     {
@@ -30,12 +44,13 @@ class Products
     }
     public static function admin(Router $router)
     {
-        $books = new ProductsModel();
-        $books->selectAll();
+        new ProductsModel();
         $router->renderView('admin/books/index',  ["books" => ProductsModel::$books]);
     }
     public static function add(Router $router)
     {
+
+        // ! here need to fix it 
         $cates = new CategoriesModel();
         $auth = new AuthorsModel();
         $publishers = new PublishersModel();
@@ -66,11 +81,17 @@ class Products
             // $active = $_POST['isActive'];
             $bookImage = $_FILES['bookImage'];
 
-            // upload the image 
-            $image = new UploadFile();
-            if ($image->uploadIamge($bookImage)) {
-                $imageName = $image->uploadIamge($bookImage);
+            // check if the image not empty or put the default
+            if (empty($bookImage['name']) == 1) {
+                $imageName = '465531.jpg';
+            } else {
+                // upload the image 
+                $image = new UploadFile();
+                if ($image->uploadIamge($bookImage)) {
+                    $imageName = $image->uploadIamge($bookImage);
+                }
             }
+
             $data = array(
                 "title"  => $title,
                 "price" => $price,
@@ -95,7 +116,8 @@ class Products
                     "faild_massage" => "Book could not be adding"
                 );
             }
-            $router->renderView('admin/books/index', [$message, ProductsModel::$books]);
+            new ProductsModel();
+            $router->renderView('admin/books/index', [$message, 'books' => ProductsModel::$books]);
         }
     }
 }

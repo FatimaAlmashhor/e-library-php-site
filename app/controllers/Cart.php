@@ -7,6 +7,7 @@ namespace App\Controllers;
 use App\Router;
 use App\Utils\Validation;
 
+
 use PDO;
 
 class Cart
@@ -17,5 +18,10 @@ class Cart
     public static function index(Router $router)
     {
         $router->renderView('client/cart');
+    }
+    public static function test(Router $router)
+    {
+
+        // $router->renderView('client/cart');
     }
 }
