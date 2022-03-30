@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Router;
+use App\Models\Authors as AuthorsModel;
 use App\Utils\Validation;
 
 use PDO;
@@ -16,7 +17,8 @@ class Authors
     */
     public static function index(Router $router)
     {
-        $router->renderView('admin/authors/index');
+        new AuthorsModel();
+        $router->renderView('admin/authors/index', ['authors' => AuthorsModel::$authors]);
     }
     public static function add(Router $router)
     {
