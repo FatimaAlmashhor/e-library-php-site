@@ -68,6 +68,7 @@ $router->get('/admin/publishers/delete', [PublishersController::class, 'delete']
 // users
 $router->get('/admin/users', [UsersController::class, 'adminUsers']);
 $router->get('/admin/users/add', [UsersController::class, 'adminAddUsers']);
+$router->post('/admin/users/add', [UsersController::class, 'register']);
 $router->get('/admin/users/edit', [UsersController::class, 'adminEditUsers']);
 $router->get('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']);
 

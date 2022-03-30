@@ -1,88 +1,73 @@
-<!-- Multi Column with Form Separator -->
-<div class="card mb-4">
-    <h5 class="card-header">Add new user</h5>
-
-    <div class="col-12">
+<div class="row">
+    <div class="col-xl">
         <div class="card mb-4">
-            <h5 class="card-header">Basic</h5>
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Add User</h5> <small class="text-muted float-end">Default label</small>
+            </div>
             <div class="card-body">
-                <form action="https://demos.themeselection.com/upload" class="dropzone needsclick" id="dropzone-basic">
-                    <div class="dz-message needsclick">
-                        Drop files here or click to upload
-                        <span class="note needsclick">(This is just a demo dropzone. Selected files are
-                            <strong>not</strong> actually uploaded.)</span>
+                <form class="" action="/admin/users/add" method="post">
+                    <div class="row">
+                        <div class="mb-3 col-md-5">
+                            <label class="form-label" for="basic-default-fullname">First Name</label>
+                            <input type="text" name='fname' class="form-control" id="basic-default-fullname"
+                                placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3 col-md-5">
+                            <label class="form-label" for="basic-default-fullname">Last Name</label>
+                            <input type="text" name='lname' class="form-control" id="basic-default-fullname"
+                                placeholder="John Doe" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="switch mt-4">
+                                <input type="checkbox" class="switch-input is-valid" name='isActive' checked />
+                                <span class="switch-toggle-slider">
+                                    <span class="switch-on"></span>
+                                    <span class="switch-off"></span>
+                                </span>
+                                <span class="switch-label">Valid</span>
+                            </label>
+                        </div>
+
                     </div>
-                    <div class="fallback">
-                        <input name="file" type="file" />
+
+                    <!-- email section -->
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-default-email">Email</label>
+                        <div class="input-group input-group-merge">
+                            <input type="text" id="basic-default-email" name='email' class="form-control"
+                                placeholder="john.doe" aria-label="john.doe" required
+                                aria-describedby="basic-default-email2">
+                            <span class="input-group-text" id="basic-default-email2">@example.com</span>
+                        </div>
+                        <div class="form-text"> You can use letters, numbers &amp; periods </div>
                     </div>
+
+                    <!--password section  -->
+                    <div class="row">
+                        <div class="form-password-toggle mb-3 col-md-6">
+                            <label class="form-label" for="multicol-password">Password</label>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="multicol-password" name='password' class="form-control"
+                                    placeholder="············" aria-describedby="multicol-password2">
+                                <span class="input-group-text cursor-pointer" id="multicol-password2"><i
+                                        class="bx bx-hide"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-password-toggle mb-3 col-md-6">
+                            <label class="form-label" for="multicol-password">Confirm Password</label>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="multicol-password" name='cpassword' class="form-control"
+                                    placeholder="············" aria-describedby="multicol-password2">
+                                <span class="input-group-text cursor-pointer" id="multicol-password2"><i
+                                        class="bx bx-hide"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Send</button>
                 </form>
             </div>
         </div>
     </div>
-    <!-- /Basic  -->
-    <form class="card-body">
-        <div class="row g-3">
-            <div class="col-md-12">
-                <label class="form-label" for="multicol-username">Title</label>
-                <input type="text" id="multicol-username" class="form-control" placeholder="Tech" />
-            </div>
-            <div class="col-md-12">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-username">Price</label>
-                    <input type="text" id="multicol-username" class="form-control" placeholder="Tech" />
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-username">Quentity</label>
-                    <input type="number" id="multicol-username" class="form-control" placeholder="Tech" />
-                </div>
-            </div>
-            <div class="row g-3 ">
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-username">Format</label>
-                    <input type="text" id="multicol-username" class="form-control" placeholder="Tech" />
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label" for="multicol-username">page number</label>
-                    <input type="number" id="multicol-username" class="form-control" placeholder="Tech" />
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="defaultSelect" class="form-label">Author</label>
-                <select id="defaultSelect" class="form-select">
-                    <option>Default select</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="defaultSelect" class="form-label">Publishor</label>
-                <select id="defaultSelect" class="form-select">
-                    <option>Default select</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row g-3">
-            <label class="switch">
-                <input type="checkbox" class="switch-input is-valid" checked />
-                <span class="switch-toggle-slider">
-                    <span class="switch-on"></span>
-                    <span class="switch-off"></span>
-                </span>
-                <span class="switch-label">Valid</span>
-            </label>
-        </div>
-        <div class="pt-4">
-            <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-            <button type="reset" class="btn btn-label-secondary">Cancel</button>
-        </div>
-    </form>
 </div>

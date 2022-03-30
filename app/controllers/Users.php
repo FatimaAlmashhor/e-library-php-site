@@ -53,23 +53,34 @@ class Users
                 );
 
                 // connect to the model
+                $pass = false;
                 $model = new UserModel();
                 $isCreationDoneWell = $model->create($date);
 
                 if ($isCreationDoneWell) {
-                    $router->renderView('client/index');
+                    $massage =   ["success_massage" => "User added scuccessfuly"];
+                    $pass = true;
+                    // $router->renderView('client/index');
                     echo "scuccess";
                 } else {
-                    $router->renderView('client/index', ['faild_massage' => 'Something seems not correct ']);
+                    $massage = ['faild_massage' => 'Something seems not correct '];
+                    // $router->renderView('client/index', ['faild_massage' => 'Something seems not correct ']);
                     echo "faild";
                 }
             } else {
-                $router->renderView('client/index', $checkVaildOf->getErrors());
-                echo "not valid";
-                print_r($checkVaildOf->getErrors());
+                $massage = ['faild_massage' => $checkVaildOf->getErrors()];
+                // $router->renderView('client/index', $checkVaildOf->getErrors());
             }
+            echo  $_SERVER["REQUEST_URI"];
+            $path = 'client/index';
+
+            if ($_SERVER["REQUEST_URI"] == '/admin/users/add' && $pass)
+                $path = 'admin/users/index';
+            else if ($_SERVER["REQUEST_URI"] == '/admin/users/add' &&  !$pass)
+                $path = 'admin/users/add';
+            new UserModel();
+            $router->renderView($path, ['massage' => $massage, 'users' =>  UserModel::$users]);
         }
-        $router->renderView('client/index');
     }
     public static function login(Router $router)
     {
