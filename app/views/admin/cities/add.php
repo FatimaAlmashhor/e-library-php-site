@@ -1,11 +1,12 @@
 <!-- Multi Column with Form Separator -->
 <div class="card mb-4">
     <h5 class="card-header">Add new cities</h5>
-    <form class="card-body">
+    <form class="card-body" action="/admin/cities/add" method="post">
         <div class="row g-3">
             <div class="col-md-9">
                 <label class="form-label" for="multicol-username">Name</label>
-                <input type="text" id="multicol-username" class="form-control" placeholder="Tech" />
+                <input type="text" name='name' id="multicol-username" class="form-control" placeholder="Adan"
+                    required />
             </div>
             <div class="col-md-3">
                 <label class="switch">
