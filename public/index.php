@@ -84,6 +84,7 @@ $router->get('/admin/cities/delete', [CitiesController::class, 'delete']);
 // offers
 $router->get('/admin/offers', [OffersController::class, 'index']);
 $router->get('/admin/offers/add', [OffersController::class, 'add']);
+$router->post('/admin/offers/add', [OffersController::class, 'upload']);
 
 
 // orders
