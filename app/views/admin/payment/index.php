@@ -1,5 +1,4 @@
 <!-- Content -->
-<?php print_r($payments) ?>
 <div class="container-xxl flex-grow-1 container-p-y">
 
     <h4 class="fw-bold py-3 mb-2">Payments List</h4>
@@ -35,7 +34,7 @@
                                         tabindex="0" aria-controls="DataTables_Table_0" type="button"
                                         data-bs-toggle="modal" data-bs-target="#addPermissionModal"><span>Add
                                             Book</span></button> </div> -->
-                            <div class="dt-buttons"><a href='/admin/categories/add'
+                            <div class="dt-buttons"><a href='/admin/payments/add'
                                     class="dt-button add-new btn btn-primary mb-3 mb-md-0" tabindex="0"
                                     aria-controls="DataTables_Table_0" data-bs-target="#addPermissionModal"><span>Add
                                         payment</span></a> </div>
@@ -50,6 +49,8 @@
                             <th class="control sorting_disabled" rowspan="1" colspan="1"
                                 style="width: 68px; display: none;" aria-label=""></th>
 
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                style="width: 168px;" aria-label="Name: activate to sort column ascending">Image</th>
                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                 style="width: 168px;" aria-label="Name: activate to sort column ascending">Name</th>
                             <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"
@@ -66,9 +67,11 @@
                     <tbody>
                         <tr class="odd">
                         <tr>
-
+                            <td>
+                                <img src='/uploads/<?php echo $payment->image ?>' />
+                            </td>
                             <td> <strong>
-                                    <?php echo $payment->title ?></strong></td>
+                                    <?php echo $payment->name ?></strong></td>
 
                             <td><span
                                     class="badge bg-label-primary me-1"><?php echo $payment->is_active == 1 ? 'active' : 'Not active' ?></span>

@@ -95,7 +95,11 @@ $router->get('/admin/orders/delete', [OrdersController::class, 'delete']);
 
 // payment
 $router->get('/admin/payments', [PaymentController::class, 'adminPayment']);
-$router->get('/admin/payments/add', [UsersController::class, 'adminAddPayment']);
-$router->get('/admin/payments/edit', [UsersController::class, 'adminEditPayment']);
-$router->get('/admin/payments/delete', [UsersController::class, 'adminDeletePayment']);
+$router->get('/admin/payments/add', [PaymentController::class, 'adminAddPayment']);
+$router->post('/admin/payments/add', [PaymentController::class, 'uploadNewPaymentGetway']);
+
+
+$router->post('/admin/payments/user/add', [UsersController::class, 'adminAddPayment']);
+$router->get('/admin/payments/user/edit', [UsersController::class, 'adminEditPayment']);
+$router->get('/admin/payments/user/delete', [UsersController::class, 'adminDeletePayment']);
 $router->resolve();
