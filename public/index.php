@@ -76,6 +76,7 @@ $router->get('/admin/users/delete', [UsersController::class, 'adminDeleteUsers']
 // cities
 $router->get('/admin/cities', [CitiesController::class, 'index']);
 $router->get('/admin/cities/add', [CitiesController::class, 'add']);
+$router->post('/admin/cities/add', [CitiesController::class, 'upload']);
 $router->get('/admin/cities/edit', [CitiesController::class, 'edit']);
 $router->get('/admin/cities/delete', [CitiesController::class, 'delete']);
 
