@@ -17,8 +17,8 @@ class Publishers
     */
     public static function index(Router $router)
     {
-        new PublisherModel();
-        $router->renderView('admin/publishers/index', ['publisher' => PublisherModel::$publishers]);
+        $publisher = new PublisherModel();
+        $router->renderView('admin/publishers/index', ['publisher' =>   $publisher->selectAll()]);
     }
     public static function add(Router $router)
     {
@@ -76,8 +76,8 @@ class Publishers
                     "faild_massage" => "Publisher could not be adding"
                 );
             }
-            $publisher->selectAll();
-            $router->renderView('admin/publishers/index', ['massage' => $message, 'publisher' => PublisherModel::$publishers]);
+
+            $router->renderView('admin/publishers/index', ['massage' => $message, 'publisher' =>   $publisher->selectAll()]);
         }
     }
 }

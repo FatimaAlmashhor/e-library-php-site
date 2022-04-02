@@ -9,16 +9,10 @@ use App\Database;
 
 class Products extends Model
 {
-    public static $books;
-    public static $productsInstanse;
-
-
     function __construct()
     {
         parent::$tableName = 'books';
-
-        self::$productsInstanse = $this;
-        self::$books = $this->selectAll();
+        // self::$books = $this->selectAll();
     }
 
 

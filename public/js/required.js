@@ -86,5 +86,5 @@ const _fetchComments = (arr) => {
   })
   console.log('i am the loop element', arr);
 }
-_fetchData(reqs);
+// _fetchData(reqs);
 _fetchComments(comments)

@@ -36,9 +36,26 @@ class Products
     public static function details(Router $router)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            print_r($_POST['id']);
+            $book = new ProductsModel();
+            $publisher = new PublishersModel();
+            $author = new AuthorsModel();
+            $row = $book->getOneRow('id', $_POST['id']);
+            echo "Inside the details </br>";
+            print_r($row);
+            if ($row) {
+                $authIfo = $author->getOneRow('id', $row->author_id);
+                $publisherIfo = $publisher->getOneRow('id', $row->publisher_id);
+                print_r($authIfo);
+                print_r($publisherIfo);
+                // $pubAndAuht = array(
+                //     'publisher_name' => $publisherIfo->name,
+                //     'publisher_date' => $publisherIfo->created_at,
+                //     'author_name' => $authIfo->name,
+                // );
+                // $router->renderView('client/details', ['book' => $row, 'addtional' => $pubAndAuht]);
+            }
         }
-        // $router->renderView('client/details');
+        // $router->renderView('client/index');
     }
 
 
@@ -46,8 +63,8 @@ class Products
     // admin part
     public static function admin(Router $router)
     {
-        new ProductsModel();
-        $router->renderView('admin/books/index',  ["books" => ProductsModel::$books]);
+        $book  = new ProductsModel();
+        $router->renderView('admin/books/index',  ["books" => $book->selectAll()]);
     }
     public static function add(Router $router)
     {
@@ -60,8 +77,8 @@ class Products
         if ($cates->selectAll() && $auth->selectAll() && $publishers->selectAll()) {
             $data = array(
                 "categories" => CategoriesModel::$categories,
-                "authors" => AuthorsModel::$authors,
-                "publishers" => PublishersModel::$publishers
+                "authors" => $auth->selectAll(),
+                "publishers" => $publishers->selectAll(),
             );
             $router->renderView('admin/books/add',  $data);
         } else {
@@ -119,8 +136,8 @@ class Products
                     "faild_massage" => "Book could not be adding"
                 );
             }
-            new ProductsModel();
-            $router->renderView('admin/books/index', [$message, 'books' => ProductsModel::$books]);
+
+            $router->renderView('admin/books/index', [$message, 'books' => $book->selectAll()]);
         }
     }
 
@@ -159,8 +176,8 @@ class Products
                 if ($cates->selectAll() && $auth->selectAll() && $publishers->selectAll()) {
                     $data = array(
                         "categories" => CategoriesModel::$categories,
-                        "authors" => AuthorsModel::$authors,
-                        "publishers" => PublishersModel::$publishers
+                        "authors" => $auth->selectAll(),
+                        "publishers" => $publishers->selectAll(),
                     );
                 }
 

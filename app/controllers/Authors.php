@@ -17,8 +17,8 @@ class Authors
     */
     public static function index(Router $router)
     {
-        new AuthorsModel();
-        $router->renderView('admin/authors/index', ['authors' => AuthorsModel::$authors]);
+        $author = new AuthorsModel();
+        $router->renderView('admin/authors/index', ['authors' =>   $author->selectAll()]);
     }
     public static function add(Router $router)
     {
@@ -61,8 +61,8 @@ class Authors
                     "faild_massage" => "Book could not be adding"
                 );
             }
-            $author->selectAll();
-            $router->renderView('admin/authors/index', [$message, 'authors' => AuthorsModel::$authors]);
+
+            $router->renderView('admin/authors/index', [$message, 'authors' =>   $author->selectAll()]);
         }
     }
 }

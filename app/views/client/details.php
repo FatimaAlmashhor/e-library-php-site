@@ -1,4 +1,14 @@
 <!-- here the header -->
+<?php print_r($book);
+$details = array(
+    'رقم الصنف' => $book->category_id,
+    'رقم المنتج' => $book->id,
+    'المؤلف ' => $book->author_id,
+    'الناشر' => $book->publisher_id,
+    'تاريخ النشر' => $book->publisher_id,
+    '  عدد الصفحات' => $book->page_number,
+)
+?>
 <header>
     <div class="header-warrper container">
         <a href='./' class="logo">
@@ -81,10 +91,9 @@
                 <!-- here the information of the book -->
                 <div class="book_info">
                     <div class=" row book_title">
-                        <h2>لانك الله (كتاب ألكتروني )</h2>
+                        <h2> <?php echo $book->title ?> (<?php echo $book->format ?> )</h2>
                         <p class="more color-blue">عرض المزيد</p>
-                        <h3 class="book_info_price color-red">
-                            12.99 ر.ي
+                        <h3 class="book_info_price color-red">.<?php echo $book->price ?> ر.ي
                             <p class="color-gray font-14">شامل الضريبه</p>
                         </h3>
                     </div>
@@ -233,6 +242,13 @@
                 <!-- tablr -->
                 <div class="m-1 row " id='required-table'>
                     <!-- fetch the requirement from the js -->
+                    <?php foreach ($details as $key => $data) {
+                    ?>
+                    <div class="table-row flex-row p-1 py-2 border-b-1 border-gray">
+                        <p class=""><?php echo $key ?></p>
+                        <p class="mx-6 font-bold"><?php echo $data ?></p>
+                    </div>
+                    <?php    } ?>
                 </div>
             </div>
 

@@ -368,11 +368,14 @@
 
                             <li class="product">
                                 <div class="product_warpper flex-col">
-                                    <a href="./details">
-                                        <div class="product_img">
-                                            <img src="./assets/images/465531.jpg" alt="">
-                                        </div>
-                                    </a>
+                                    <form action='/details' method="post">
+                                        <input type="hidden" value='<?php echo $book->id ?>' name='id' />
+                                        <button type="submit">
+                                            <div class="product_img">
+                                                <img src="./assets/images/465531.jpg" alt="">
+                                            </div>
+                                        </button>
+                                    </form>
                                     <div class="product_content">
                                         <form action='/details' method="post">
                                             <input type="hidden" value='<?php echo $book->id ?>' name='id' />
@@ -382,7 +385,8 @@
                                                     <!-- <p>something</p> -->
                                                 </div>
                                                 <div class="product_price color-red">
-                                                    <h3 class="font-bold"><?php echo $book->price ?><small>ر.ي</small>
+                                                    <h3 class="font-bold">
+                                                        <?php echo $book->price ?><small>ر.ي</small>
                                                     </h3>
                                                     <p class="font-12 color-gray">شامل الضريبه</p>
                                                 </div>

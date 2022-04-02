@@ -80,6 +80,7 @@ class Model
             if ($conn->execute()) {
                 return $conn->fetch();
             } else {
+                echo "<h1>false</h1> ";
                 return false;
             }
         } catch (PDOException $thr) {
@@ -89,7 +90,7 @@ class Model
         }
     }
 
-    function update(){
-        
+    function update()
+    {
     }
 }
