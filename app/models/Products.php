@@ -37,17 +37,30 @@ class Products extends Model
     function update()
     {
         try {
-            // $this->conn = new Database();
-            $set = '';
+
+            $setQuery = '';
+            $end = end(get_object_vars($this));
             foreach (get_object_vars($this) as $key => $property) {
                 // need to get rid of the , in the end of last column
                 // print_r(obj());
-                if ($key !== 'id')
-                    $set .= $key . "=" . $property . " , ";
+                if ($key !== 'id' && $property != self::$tableName) {
+                    $stringValue = is_string($property) ? "'" . $property . "'" : $property;
+                    if ($end == $property) {
+
+                        $setQuery .= "" . $key . "" . "= " . $stringValue .   "";
+                    } else
+                        $setQuery .= "" . $key . "" . "= "  .  $stringValue .  " ,";
+                }
             }
             echo " </br>";
-            print_r($set);
-            // $this->conn->query("UPDATE " . self::$tableName . " SET " . $set . " WHERE id=" . $this->id . "")->done();
+            print_r($setQuery);
+            $this->conn = new Database();
+            $this->conn->query("UPDATE " . self::$tableName . " SET " . $setQuery . " WHERE id=" . $this->id . "")->done();
+            if ($this->conn->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (PDOException $thr) {
             return false;
         } catch (PDOStatement $thr) {

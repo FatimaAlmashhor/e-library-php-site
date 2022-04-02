@@ -39,16 +39,17 @@ if (isset($book)) {
         if (isset($book)) {
         ?>
         <input type="hidden" value='<?php echo $id ?>' name="id" />
+        <input type="hidden" value='<?php echo $image ?>' name="image" />
         <?php } ?>
         <div class="input-group">
-            <input type="file" class="form-control" name='bookImage' id="inputGroupFile02">
+            <input type="file" class="form-control" name='bookImage' value='<?php echo $image ?>' id="inputGroupFile02">
             <label class="input-group-text" for="inputGroupFile02">Upload</label>
         </div>
         <div class="row g-3">
             <div class="col-md-12">
                 <label class="form-label" for="multicol-username">Title</label>
-                <input type="text" id="multicol-username" value='<?php echo $title ?>' name=' title'
-                    class="form-control" placeholder="Tech" required />
+                <input type="text" id="multicol-username" value='<?php echo $title ?>' name='title' class="form-control"
+                    placeholder="Tech" required />
             </div>
             <div class="col-md-12">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
@@ -82,7 +83,7 @@ if (isset($book)) {
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-username">Quentity</label>
-                    <input type="number" id="multicol-username" value='<?php echo $qty ?>' name='qty'
+                    <input type="number" id="multicol-username" value=<?php echo $qty ?> name=' qty'
                         class="form-control" placeholder="Tech" />
                 </div>
             </div>
@@ -94,7 +95,7 @@ if (isset($book)) {
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-username">page number</label>
-                    <input type="number" id="multicol-username" name='pageNumber' value='<?php echo $pages ?>'
+                    <input type="number" id="multicol-username" name='pageNumber' value=<?php echo $pages ?>
                         class="form-control" placeholder="Tech" />
                 </div>
             </div>

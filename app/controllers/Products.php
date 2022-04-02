@@ -207,12 +207,13 @@ class Products
             $book->pages_number = $_POST['pageNumber'];
             $book->format = $_POST['format'];
             $book->price = $_POST['price'];
-            $book->active =  1; //$_POST['isActive'];
+            $book->is_active =  1; //$_POST['isActive'];
             $bookImage = $_FILES['bookImage'];
 
+            print_r($_REQUEST);
             // check if the image not empty or put the default
             if (empty($bookImage['name']) == 1) {
-                $book->image = '465531.jpg';
+                $book->image = $_POST['image'];
             } else {
                 // upload the image 
                 $image = new UploadFile();
@@ -220,18 +221,18 @@ class Products
                     $book->image = $image->uploadIamge($bookImage);
                 }
             }
-            $book->update();
-            // if ($book->update()) {
-            //     $message = array(
-            //         "success_massage" => "Book added scuccessfuly"
-            //     );
-            // } else {
-            //     $message = array(
-            //         "faild_massage" => "Book could not be adding"
-            //     );
-            // }
-            // new ProductsModel();
-            // $router->renderView('admin/books/index', [$message, 'books' => ProductsModel::$books]);
+
+            if ($book->update()) {
+                $message = array(
+                    "success_massage" => "Book edit scuccessfuly"
+                );
+            } else {
+                $message = array(
+                    "faild_massage" => "Book could not be edit"
+                );
+            }
+            new ProductsModel();
+            $router->renderView('admin/books/index', ['massage' => $message, 'books' => $book->selectAll()]);
         }
     }
 }

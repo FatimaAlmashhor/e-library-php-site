@@ -14,6 +14,10 @@ class Model
     {
         $this->$name = $value;
     }
+    public function __toString()
+    {
+        return $this->name;
+    }
     function create($data)
     {
         try {
