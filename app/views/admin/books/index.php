@@ -84,10 +84,14 @@
                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
                                         data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-edit-alt me-1"></i> Edit</a>
-                                        <a class="dropdown-item" href="javascript:void(0);"><i
-                                                class="bx bx-trash me-1"></i> Delete</a>
+                                        <form class="dropdown-item" action="/admin/books/edit" method="post">
+                                            <input type="hidden" name='id' value="<?php echo $book->id ?>" />
+                                            <button type="submit"><i class="bx bx-edit-alt me-1"></i> Edit</button>
+                                        </form>
+                                        <form class="dropdown-item" action="/admin/books/delete" method="post">
+                                            <input type="hidden" name='id' value="<?php echo $book->id ?>" />
+                                            <button type="submit"><i class="bx bx-trash me-1"></i> Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>

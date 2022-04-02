@@ -374,16 +374,21 @@
                                         </div>
                                     </a>
                                     <div class="product_content">
-                                        <a href="./details">
-                                            <div class="product_name">
-                                                <h4 class=""> <?php echo $book->title ?></h4>
-                                                <!-- <p>something</p> -->
-                                            </div>
-                                            <div class="product_price color-red">
-                                                <h3 class="font-bold"><?php echo $book->price ?><small>ر.ي</small></h3>
-                                                <p class="font-12 color-gray">شامل الضريبه</p>
-                                            </div>
-                                        </a>
+                                        <form action='/details' method="post">
+                                            <input type="hidden" value='<?php echo $book->id ?>' name='id' />
+                                            <button type="submit">
+                                                <div class="product_name">
+                                                    <h4 class=""> <?php echo $book->title ?></h4>
+                                                    <!-- <p>something</p> -->
+                                                </div>
+                                                <div class="product_price color-red">
+                                                    <h3 class="font-bold"><?php echo $book->price ?><small>ر.ي</small>
+                                                    </h3>
+                                                    <p class="font-12 color-gray">شامل الضريبه</p>
+                                                </div>
+                                            </button>
+                                        </form>
+
                                         <!-- <div class="product_more-info">
                           inforamtion
                         </div> -->

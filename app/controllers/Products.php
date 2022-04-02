@@ -15,14 +15,9 @@ use PDO;
 
 class Products
 {
+    // client part
 
-    // function __construct()
-    // {
-    //     new ProductsModel();
-    //     new CategoriesModel();
-    //     new AuthorsModel();
-    //     new PublishersModel();
-    // }
+
     /*
     @param Router to reach the database and view ;
     */
@@ -40,8 +35,15 @@ class Products
     }
     public static function details(Router $router)
     {
-        $router->renderView('client/details');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            print_r($_POST['id']);
+        }
+        // $router->renderView('client/details');
     }
+
+
+
+    // admin part
     public static function admin(Router $router)
     {
         new ProductsModel();
@@ -66,6 +68,8 @@ class Products
             $router->renderView('admin/books/add', ['faild_massage' => 'Something seems not right']);
         }
     }
+
+    // inset new data to the database
     static function  upload(Router $router)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -91,7 +95,7 @@ class Products
                     $imageName = $image->uploadIamge($bookImage);
                 }
             }
-
+            $book = new ProductsModel();
             $data = array(
                 "title"  => $title,
                 "price" => $price,
@@ -106,7 +110,6 @@ class Products
                 "quantity" => $qty,
                 "image" => $imageName
             );
-            $book = new ProductsModel();
             if ($book->create($data)) {
                 $message = array(
                     "success_massage" => "Book added scuccessfuly"
@@ -118,6 +121,100 @@ class Products
             }
             new ProductsModel();
             $router->renderView('admin/books/index', [$message, 'books' => ProductsModel::$books]);
+        }
+    }
+
+    static function delete(Router $router)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            print_r($_POST['id']);
+            $book = new ProductsModel();
+            if ($book->deleteOneRow('id', $_POST['id'])) {
+                $message = array(
+                    "success_massage" => "scuccessfuly deleted the book"
+                );
+            } else {
+                $message = array(
+                    "faild_massage" => "Failed delete the book "
+                );
+            }
+            $router->renderView('admin/books/index', ['massage' => $message, 'books' => $book->selectAll()]);
+        }
+    }
+    static function showBook(Router $router)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            print_r($_POST['id']);
+
+            $book = new ProductsModel();
+            $row = $book->getOneRow('id', $_POST['id']);
+            if ($row) {
+                print_r($row);
+                $message = array(
+                    "success_massage" => ''
+                );
+                $cates = new CategoriesModel();
+                $auth = new AuthorsModel();
+                $publishers = new PublishersModel();
+                if ($cates->selectAll() && $auth->selectAll() && $publishers->selectAll()) {
+                    $data = array(
+                        "categories" => CategoriesModel::$categories,
+                        "authors" => AuthorsModel::$authors,
+                        "publishers" => PublishersModel::$publishers
+                    );
+                }
+
+                $router->renderView('admin/books/add', ['massage' => $message, 'book' => $row, 'data' => $data]);
+            } else {
+                $message = array(
+                    "faild_massage" => "There is no exist book "
+                );
+                $router->renderView('admin/books/index', ['massage' => $message, 'books' => $book->selectAll()]);
+            }
+        }
+    }
+
+    // this is function for update the book
+    static function update(Router $router)
+    {
+        $book = new ProductsModel();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $book->id = $_POST['id'];
+            $book->title = $_POST['title'];
+            $book->description = $_POST['des'];
+            $book->category_id = $_POST['category'];
+            $book->author_id = $_POST['author'];
+            $book->publisher_id = $_POST['publisher'];
+            $book->quantity = $_POST['qty'];
+            $book->pages_number = $_POST['pageNumber'];
+            $book->format = $_POST['format'];
+            $book->price = $_POST['price'];
+            $book->active =  1; //$_POST['isActive'];
+            $bookImage = $_FILES['bookImage'];
+
+            // check if the image not empty or put the default
+            if (empty($bookImage['name']) == 1) {
+                $book->image = '465531.jpg';
+            } else {
+                // upload the image 
+                $image = new UploadFile();
+                if ($image->uploadIamge($bookImage)) {
+                    $book->image = $image->uploadIamge($bookImage);
+                }
+            }
+            $book->update();
+            // if ($book->update()) {
+            //     $message = array(
+            //         "success_massage" => "Book added scuccessfuly"
+            //     );
+            // } else {
+            //     $message = array(
+            //         "faild_massage" => "Book could not be adding"
+            //     );
+            // }
+            // new ProductsModel();
+            // $router->renderView('admin/books/index', [$message, 'books' => ProductsModel::$books]);
         }
     }
 }

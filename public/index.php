@@ -25,6 +25,7 @@ $router->post('/register', [UsersController::class, 'register']);
 $router->post('/login', [UsersController::class, 'login']);
 
 $router->get('/details', [ProductsController::class, 'details']);
+$router->post('/details', [ProductsController::class, 'details']);
 
 $router->get('/cart', [CartController::class, 'index']);
 $router->get('/admin/cart/:id/:country', [CartController::class, 'test($param)']);
@@ -41,6 +42,9 @@ $router->get('/admin', [ProductsController::class, 'admin']);
 $router->get('/admin/books', [ProductsController::class, 'admin']);
 $router->get('/admin/books/add', [ProductsController::class, 'add']);
 
+$router->post('/admin/books/edit', [ProductsController::class, 'showBook']);
+$router->post('/admin/books/update', [ProductsController::class, 'update']);
+$router->post('/admin/books/delete', [ProductsController::class, 'delete']);
 $router->post('/admin/books/add', [ProductsController::class, 'upload']);
 
 // categories

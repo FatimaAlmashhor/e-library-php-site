@@ -1,9 +1,45 @@
 <!-- Book form  -->
+<?php
+
+$title = '';
+$image =  '';
+$des = '';
+$price = '';
+$qty = '';
+$pages = '';
+$createdBy = '';
+$cate = '';
+$auth = '';
+$format = '';
+$publisher = '';
+$action = "/admin/books/add";
+if (isset($book)) {
+    $action = "/admin/books/update";
+    $id = $book->id;
+    $title = $book->title;
+    $image =  $book->image;
+    $des = $book->description;
+    $price = $book->price;
+    $qty = $book->quantity;
+    $pages = $book->pages_number;
+    $format = $book->format;
+    $createdBy = $book->created_by;
+    $cate = $book->category_id;
+    $auth = $book->author_id;
+    $publisher = $book->publisher_id;
+}
+?>
 <div class="card mb-4">
     <h5 class="card-header">Add new book</h5>
 
 
-    <form class="card-body" method="POST" action="/admin/books/add" enctype="multipart/form-data">
+    <form class="card-body" method="POST" action=<?php echo $action ?> enctype="multipart/form-data">
+
+        <?php
+        if (isset($book)) {
+        ?>
+        <input type="hidden" value='<?php echo $id ?>' name="id" />
+        <?php } ?>
         <div class="input-group">
             <input type="file" class="form-control" name='bookImage' id="inputGroupFile02">
             <label class="input-group-text" for="inputGroupFile02">Upload</label>
@@ -11,21 +47,21 @@
         <div class="row g-3">
             <div class="col-md-12">
                 <label class="form-label" for="multicol-username">Title</label>
-                <input type="text" id="multicol-username" name='title' class="form-control" placeholder="Tech" />
+                <input type="text" id="multicol-username" value='<?php echo $title ?>' name=' title'
+                    class="form-control" placeholder="Tech" required />
             </div>
             <div class="col-md-12">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" name='des' id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name='des' value='<?php echo $des ?>' id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
             </div>
             <div class="row g-3 ">
                 <div class="mb-3 col-md-6">
                     <label for="defaultSelect" class="form-label">Category</label>
-                    <select id="defaultSelect" class="form-select" name=' category'>
-                        <?php foreach ($categories as $category) {
+                    <select id="defaultSelect" value='<?php echo $cate ?>' class="form-select" name='category'>
+                        <?php foreach ($data['categories'] as $category) {
                             echo "<option value='$category->id'>" . $category->name . "</option>";
-                        } ?>
-
-                    </select>
+                        } ?> </select>
                 </div>
                 <div class="col-md-6">
                     <label class="switch mt-4">
@@ -41,37 +77,40 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-username">Price</label>
-                    <input type="text" id="multicol-username" name='price' class="form-control" placeholder="Tech" />
+                    <input type="text" id="multicol-username" name='price' value='<?php echo $price ?>'
+                        class="form-control" placeholder="Tech" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-username">Quentity</label>
-                    <input type="number" id="multicol-username" name='qty' class="form-control" placeholder="Tech" />
+                    <input type="number" id="multicol-username" value='<?php echo $qty ?>' name='qty'
+                        class="form-control" placeholder="Tech" />
                 </div>
             </div>
             <div class="row g-3 ">
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-username">Format</label>
-                    <input type="text" id="multicol-username" name='format' class="form-control" placeholder="Tech" />
+                    <input type="text" id="multicol-username" name='format' value='<?php echo $format ?>'
+                        class="form-control" placeholder="Tech" />
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="multicol-username">page number</label>
-                    <input type="number" id="multicol-username" name='pageNumber' class="form-control"
-                        placeholder="Tech" />
+                    <input type="number" id="multicol-username" name='pageNumber' value='<?php echo $pages ?>'
+                        class="form-control" placeholder="Tech" />
                 </div>
             </div>
             <div class="row g-3 ">
                 <div class="mb-3 col-md-6">
                     <label for="defaultSelect" class="form-label">Author</label>
-                    <select id="defaultSelect" class="form-select" name='author'>
-                        <?php foreach ($authors as $author) {
+                    <select id="defaultSelect" class="form-select" name='author' value='<?php echo $auth ?>'>
+                        <?php foreach ($data['authors'] as $author) {
                             echo "<option value='$author->id'>" . $author->name . "</option>";
                         } ?>
                     </select>
                 </div>
                 <div class="mb-3 col-md-6">
                     <label for="defaultSelect" class="form-label">Publishor</label>
-                    <select id="defaultSelect" class="form-select" name="publisher">
-                        <?php foreach ($publishers as $publisher) {
+                    <select id="defaultSelect" class="form-select" name="publisher" value='<?php echo $publisher ?>'>
+                        <?php foreach ($data['publishers'] as $publisher) {
                             echo "<option value='$publisher->id'>" . $publisher->name . "</option>";
                         } ?>
                     </select>

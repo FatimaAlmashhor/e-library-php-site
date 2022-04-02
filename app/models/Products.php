@@ -3,56 +3,29 @@
 namespace App\Models;
 
 
-use App\Database;
+use App\Models\Model;
 use PDO, PDOException, PDOStatement;
+use App\Database;
 
-class Products
+class Products extends Model
 {
     public static $books;
-    private $conn;
+    public static $productsInstanse;
+
+
     function __construct()
     {
-        $this->conn = new Database();
-        $this->selectAll();
-    }
-    function create($data)
-    {
-        try {
-            $keys = implode(",", array_keys($data));
-            $values = implode("','", array_values($data));
+        parent::$tableName = 'books';
 
-            $this->conn->query("INSERT INTO books (" . $keys . ") VALUES ('" . $values . "')")->done();
-            if ($this->conn->execute())
-                return true;
-            else
-                return false;
-        } catch (PDOException $thr) {
-            return false;
-        } catch (PDOStatement $thr) {
-            return false;
-        }
+        self::$productsInstanse = $this;
+        self::$books = $this->selectAll();
     }
 
 
-    function selectAll()
-    {
-        try {
-            $this->conn->query("SELECT * FROM `books` ")->done();
-            if ($this->conn->execute()) {
-                self::$books = $this->conn->fetchAll();
-                return  true;
-            } else {
-                return false;
-            }
-        } catch (PDOException $thr) {
-            return false;
-        } catch (PDOStatement $thr) {
-            return false;
-        }
-    }
     function selectBooksOfcategory($cate_id)
     {
         try {
+            $this->conn = new Database();
             $this->conn->query("SELECT * FROM `books` WHERE `category_id` =:cateId ")->done();
             $this->conn->bind(':cateId',  $cate_id,  PDO::PARAM_INT);
 
@@ -61,6 +34,26 @@ class Products
             } else {
                 return false;
             }
+        } catch (PDOException $thr) {
+            return false;
+        } catch (PDOStatement $thr) {
+            return false;
+        }
+    }
+    function update()
+    {
+        try {
+            // $this->conn = new Database();
+            $set = '';
+            foreach (get_object_vars($this) as $key => $property) {
+                // need to get rid of the , in the end of last column
+                // print_r(obj());
+                if ($key !== 'id')
+                    $set .= $key . "=" . $property . " , ";
+            }
+            echo " </br>";
+            print_r($set);
+            // $this->conn->query("UPDATE " . self::$tableName . " SET " . $set . " WHERE id=" . $this->id . "")->done();
         } catch (PDOException $thr) {
             return false;
         } catch (PDOStatement $thr) {
