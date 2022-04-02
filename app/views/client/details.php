@@ -1,12 +1,13 @@
 <!-- here the header -->
-<?php print_r($book);
+<?php
+print_r($addtional);
 $details = array(
     'رقم الصنف' => $book->category_id,
     'رقم المنتج' => $book->id,
-    'المؤلف ' => $book->author_id,
-    'الناشر' => $book->publisher_id,
-    'تاريخ النشر' => $book->publisher_id,
-    '  عدد الصفحات' => $book->page_number,
+    'المؤلف ' => $addtional['author_name'],
+    'الناشر' => $addtional['publisher_name'],
+    'تاريخ النشر' => $addtional['publisher_date'],
+    '  عدد الصفحات' => $book->pages_number,
 )
 ?>
 <header>

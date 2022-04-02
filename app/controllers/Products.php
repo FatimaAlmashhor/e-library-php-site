@@ -37,25 +37,26 @@ class Products
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $book = new ProductsModel();
-            $publisher = new PublishersModel();
-            $author = new AuthorsModel();
+
+
             $row = $book->getOneRow('id', $_POST['id']);
             echo "Inside the details </br>";
             print_r($row);
             if ($row) {
+                $author = new AuthorsModel();
                 $authIfo = $author->getOneRow('id', $row->author_id);
+
+                $publisher = new PublishersModel();
                 $publisherIfo = $publisher->getOneRow('id', $row->publisher_id);
-                print_r($authIfo);
-                print_r($publisherIfo);
-                // $pubAndAuht = array(
-                //     'publisher_name' => $publisherIfo->name,
-                //     'publisher_date' => $publisherIfo->created_at,
-                //     'author_name' => $authIfo->name,
-                // );
-                // $router->renderView('client/details', ['book' => $row, 'addtional' => $pubAndAuht]);
+                $pubAndAuht = array(
+                    'publisher_name' => $publisherIfo->name,
+                    'publisher_date' => $publisherIfo->created_at,
+                    'author_name' => $authIfo->name,
+                );
+                $router->renderView('client/details', ['book' => $row, 'addtional' => $pubAndAuht]);
             }
         }
-        // $router->renderView('client/index');
+        $router->renderView('client/index');
     }
 
 
